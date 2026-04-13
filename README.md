@@ -13,8 +13,8 @@ Estrutura pronta para publicação em hospedagem tradicional, incluindo HostGato
 - `obrigado.html` -> página de retorno após envio
 
 ## Dados já configurados
-- E-mail comercial exibido: `rbbautomacao@gmail.com`
-- E-mail de recebimento dos formulários: `lenadrosantos57.ls@gmail.com`
+- E-mail comercial exibido: `contato@rbbautomacao.com.br`
+- E-mail de recebimento dos formulários: `contato@rbbautomacao.com.br`
 - Telefone/WhatsApp: `+55 21 99386-0628`
 - LinkedIn: `https://www.linkedin.com/in/leandro-santos-10831b141/`
 - Instagram: `https://www.instagram.com/accounts/onetap/`

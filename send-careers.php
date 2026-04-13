@@ -1,5 +1,5 @@
 <?php
-$destinationEmail = 'lenadrosantos57.ls@gmail.com';
+$destinationEmail = 'contato@rbbautomacao.com.br';
 
 function clean_input($value) {
     return trim(strip_tags($value ?? ''));
