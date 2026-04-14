@@ -47,3 +47,41 @@ if ('IntersectionObserver' in window && revealItems.length) {
 } else {
   revealItems.forEach((item) => item.classList.add('is-visible'));
 }
+
+const forms = document.querySelectorAll('form[novalidate]');
+
+forms.forEach((form) => {
+  form.addEventListener('submit', (event) => {
+    if (!form.checkValidity()) {
+      event.preventDefault();
+      form.reportValidity();
+    }
+  });
+});
+
+const thankYouSection = document.querySelector('.thank-you-section');
+
+if (thankYouSection) {
+  const status = new URLSearchParams(window.location.search).get('status');
+  const badge = thankYouSection.querySelector('.maintenance-badge');
+  const title = thankYouSection.querySelector('h1');
+  const message = thankYouSection.querySelector('p');
+  const primaryButton = thankYouSection.querySelector('.btn-primary');
+  const secondaryButton = thankYouSection.querySelector('.btn-outline');
+
+  if (status === 'erro') {
+    if (badge) badge.textContent = 'Falha no envio';
+    if (title) title.textContent = 'Nao foi possivel enviar sua mensagem';
+    if (message) message.textContent = 'Tente novamente em alguns minutos ou fale conosco pelo WhatsApp.';
+    if (primaryButton) {
+      primaryButton.textContent = 'Tentar novamente';
+      primaryButton.setAttribute('href', 'fale-conosco.html');
+    }
+    if (secondaryButton) {
+      secondaryButton.textContent = 'Falar no WhatsApp';
+      secondaryButton.setAttribute('href', 'https://wa.me/5521993860628');
+      secondaryButton.setAttribute('target', '_blank');
+      secondaryButton.setAttribute('rel', 'noopener noreferrer');
+    }
+  }
+}

@@ -1,0 +1,8 @@
+﻿Homologacao RBB-65 - evidencias textuais
+Executado em: 2026-04-14 15:43:23 -03:00
+
+GET /index.html => HTTP/1.1 200 OK
+POST /send-contact.php (valido) =>  | 
+POST /send-contact.php (invalido) =>  | 
+GET /obrigado.html?status=ok => HTTP/1.1 200 OK
+GET /obrigado.html?status=erro => HTTP/1.1 200 OK

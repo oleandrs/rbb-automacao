@@ -1,4 +1,5 @@
 .hero {
+  position: relative;
   padding-top: 0;
 }
 
@@ -10,6 +11,37 @@
   width: 100%;
   max-height: 660px;
   object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  margin-top: -8.5rem;
+  margin-bottom: 1rem;
+  max-width: 760px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(1.8rem, 3.8vw, 3.2rem);
+  line-height: 1.08;
+  margin-bottom: .9rem;
+  text-transform: uppercase;
+}
+
+.hero-content p {
+  color: var(--text-soft);
+  max-width: 58ch;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .85rem;
+  margin-top: 1.4rem;
 }
 
 .about-section,

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="description" content="RBB Automação - serviços em automação industrial, retrofit de máquinas, inversores, IHM, SCADA e comissionamento.">
   <meta name="keywords" content="automação industrial, automação de processos, retrofit de máquinas, inversores de frequência, IHM, SCADA, automação industrial RJ">
   <meta name="author" content="RBB Automação">
@@ -37,25 +38,33 @@
           <a class="is-active" href="#home">Home</a>
           <a href="#sobre">Sobre Nós</a>
           <a href="#servicos">Serviços</a>
-          <a href="projetos.html">Projetos</a>
+          <a href="#contato-home">Solicitar proposta</a>
           <a href="fale-conosco.html">Fale Conosco</a>
           <a href="trabalhe-aqui.html">Trabalhe Conosco</a>
-          <a href="treinamentos.html">Treinamentos</a>
         </nav>
 
         <div class="header-social" aria-label="Redes sociais">
-          <a href="https://www.linkedin.com/in/leandro-santos-10831b141/" target="_blank" rel="noopener" aria-label="LinkedIn da RBB Automação"><img src="assets/img/social/linkedin-preto.png" alt=""></a>
-          <a href="https://www.instagram.com/accounts/onetap/" target="_blank" rel="noopener" aria-label="Instagram da RBB Automação"><img src="assets/img/social/instagram-preto.png" alt=""></a>
-          <a href="https://wa.me/21993860628" target="_blank" rel="noopener" aria-label="WhatsApp da RBB Automação"><img src="assets/img/social/whatsapp-preto.png" alt=""></a>
+          <a href="https://www.linkedin.com/in/leandro-santos-10831b141/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da RBB Automação"><img src="assets/img/social/linkedin-preto.png" alt=""></a>
+          <a href="https://www.instagram.com/accounts/onetap/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da RBB Automação"><img src="assets/img/social/instagram-preto.png" alt=""></a>
+          <a href="https://wa.me/21993860628" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da RBB Automação"><img src="assets/img/social/whatsapp-preto.png" alt=""></a>
         </div>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="home" aria-label="Destaque principal">
+        <section class="hero" id="home" aria-label="Destaque principal">
       <div class="hero-banner reveal">
-        <img src="assets/img/banners/banner-rbb.png" alt="RBB Automação Industrial - Serviços e Treinamentos">
+        <img src="assets/img/banners/banner-rbb.png" alt="RBB Automacao Industrial - Servicos e Solucoes">
+      </div>
+      <div class="container hero-content reveal">
+        <span class="eyebrow">Automacao industrial com foco em resultado</span>
+        <h1>Reduza paradas e aumente a eficiencia da sua operacao</h1>
+        <p>Planejamento tecnico, retrofit de maquinas e comissionamento para colocar sua linha em producao com mais confianca e previsibilidade.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contato-home">Receber proposta em ate 24h</a>
+          <a class="btn btn-outline" href="#servicos">Ver servicos</a>
+        </div>
       </div>
     </section>
 
@@ -140,6 +149,74 @@
         </div>
       </div>
     </section>
+    <section class="form-page-section" id="contato-home">
+      <div class="container form-layout">
+        <div class="form-copy reveal">
+          <span class="eyebrow">Sprint 1 de conversao</span>
+          <h2>Solicite um diagnostico tecnico</h2>
+          <p>Preencha os dados abaixo para receber um retorno com escopo inicial e proxima etapa recomendada para o seu processo.</p>
+        </div>
+
+        <div class="form-shell reveal">
+          <form class="contact-form" action="send-contact.php" method="post" novalidate>
+            <div class="field-grid">
+              <div class="field">
+                <label for="nome-home">Nome</label>
+                <input type="text" id="nome-home" name="nome" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="empresa-home">Empresa</label>
+                <input type="text" id="empresa-home" name="empresa" autocomplete="organization" required>
+              </div>
+              <div class="field">
+                <label for="telefone-home">Telefone</label>
+                <input type="tel" id="telefone-home" name="telefone" inputmode="tel" autocomplete="tel" required>
+              </div>
+              <div class="field">
+                <label for="email-home">E-mail</label>
+                <input type="email" id="email-home" name="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="segmento-home">Segmento industrial</label>
+                <select id="segmento-home" name="segmento" required>
+                  <option value="">Selecione</option>
+                  <option>Alimentos e bebidas</option>
+                  <option>Farmaceutico e quimico</option>
+                  <option>Metalurgia e siderurgia</option>
+                  <option>Papel e celulose</option>
+                  <option>Logistica e armazenagem</option>
+                  <option>Outro</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="sla-home">SLA desejado para primeiro retorno</label>
+                <select id="sla-home" name="sla" required>
+                  <option value="">Selecione</option>
+                  <option>Ate 4 horas</option>
+                  <option>Ate 24 horas</option>
+                  <option>Ate 48 horas</option>
+                  <option>Sem urgencia</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="servico-home">Servico de interesse</label>
+              <input type="text" id="servico-home" name="servico" autocomplete="off" required>
+            </div>
+            <div class="field">
+              <label for="mensagem-home">Mensagem</label>
+              <textarea id="mensagem-home" name="mensagem" rows="6" required></textarea>
+            </div>
+            <div class="field" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
+              <label for="website-home">Website</label>
+              <input type="text" id="website-home" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <input type="hidden" name="_subject" value="Contato pela home - RBB Automacao">
+            <button class="btn btn-primary" type="submit">Enviar solicitacao</button>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -148,9 +225,9 @@
         <img class="footer-logo" src="assets/img/logo/logo-footer-branco.png" alt="RBB Automação">
         <p>Otimizando Processo, Conectando Coisas Industriais</p>
         <div class="footer-social">
-          <a href="https://www.linkedin.com/in/leandro-santos-10831b141/" target="_blank" rel="noopener" aria-label="LinkedIn da RBB Automação"><img src="assets/img/social/linkedin-branco.png" alt=""></a>
-          <a href="https://www.instagram.com/accounts/onetap/" target="_blank" rel="noopener" aria-label="Instagram da RBB Automação"><img src="assets/img/social/instagram-branco.png" alt=""></a>
-          <a href="https://wa.me/21993860628" target="_blank" rel="noopener" aria-label="WhatsApp da RBB Automação"><img src="assets/img/social/whatsapp-branco.png" alt=""></a>
+          <a href="https://www.linkedin.com/in/leandro-santos-10831b141/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da RBB Automação"><img src="assets/img/social/linkedin-branco.png" alt=""></a>
+          <a href="https://www.instagram.com/accounts/onetap/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da RBB Automação"><img src="assets/img/social/instagram-branco.png" alt=""></a>
+          <a href="https://wa.me/21993860628" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da RBB Automação"><img src="assets/img/social/whatsapp-branco.png" alt=""></a>
         </div>
       </div>
 
@@ -160,7 +237,7 @@
           <li><a href="index.html#home">Home</a></li>
           <li><a href="index.html#sobre">Sobre Nós</a></li>
           <li><a href="index.html#servicos">Serviços</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="#contato-home">Solicitar proposta</a></li>
           <li><a href="treinamentos.html">Treinamentos</a></li>
         </ul>
       </div>
@@ -178,8 +255,8 @@
         <h3>Institucional</h3>
         <ul class="footer-list">
           <li><a href="trabalhe-aqui.html">Trabalhe Conosco</a></li>
-          <li><a href="#">Política de Cookies</a></li>
-          <li><a href="#">Declaração Privada</a></li>
+          <li><a href="politica-de-cookies.html">Política de Cookies</a></li>
+          <li><a href="declaracao-de-privacidade.html">Declaração de Privacidade</a></li>
           <li><span>CNPJ: 63.802.688/0001-43</span></li>
         </ul>
       </div>

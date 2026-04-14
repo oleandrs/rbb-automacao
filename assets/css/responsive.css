@@ -90,6 +90,15 @@
     object-position: center;
   }
 
+  .hero-content {
+    margin-top: -4.5rem;
+    padding: 1.4rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
   .services-grid {
     grid-template-columns: 1fr;
   }
@@ -137,6 +146,11 @@
   .form-shell,
   .maintenance-card {
     padding: 1.5rem;
+  }
+
+  .hero-content {
+    margin-top: -3rem;
+    padding: 1.2rem;
   }
 
   .internal-hero {

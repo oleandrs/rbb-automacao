@@ -11,6 +11,9 @@ Estrutura pronta para publicação em hospedagem tradicional, incluindo HostGato
 - `send-contact.php` -> processamento do formulário de contato
 - `send-careers.php` -> processamento do formulário Trabalhe Conosco
 - `obrigado.html` -> página de retorno após envio
+- `politica-de-cookies.html` -> política de cookies
+- `declaracao-de-privacidade.html` -> declaração de privacidade
+- `.htaccess` -> headers de segurança, cache e compressão
 
 ## Dados já configurados
 - E-mail comercial exibido: `rbbautomacao@gmail.com`
@@ -28,6 +31,8 @@ Estrutura pronta para publicação em hospedagem tradicional, incluindo HostGato
 
 ## Atenção sobre os formulários
 Os formulários usam `mail()` do PHP. Em alguns ambientes isso pode exigir ajuste no servidor. Se preferir mais confiabilidade depois, o recomendado é trocar por SMTP autenticado.
+
+Os formulários agora incluem um campo honeypot (`website`) para reduzir spam básico e a página `obrigado.html` trata feedback de sucesso/erro via query string.
 
 ## Personalizações rápidas
 - Textos: edite os arquivos `.html`

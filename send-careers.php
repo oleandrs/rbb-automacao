@@ -6,6 +6,9 @@ function clean_input($value) {
 }
 
 function redirect_with_status($status) {
+    header('X-Content-Type-Options: nosniff');
+    header('Referrer-Policy: strict-origin-when-cross-origin');
+    header('X-Frame-Options: SAMEORIGIN');
     header('Location: obrigado.html?status=' . $status);
     exit;
 }
@@ -20,9 +23,18 @@ $telefone = clean_input($_POST['telefone'] ?? '');
 $email = clean_input($_POST['email'] ?? '');
 $area = clean_input($_POST['area'] ?? '');
 $mensagem = trim($_POST['mensagem'] ?? '');
+$website = clean_input($_POST['website'] ?? '');
 $subject = clean_input($_POST['_subject'] ?? 'Trabalhe Conosco - RBB Automação');
 
-if (!$nome || !$telefone || !$email || !$area || !$mensagem || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if ($website !== '') {
+    redirect_with_status('ok');
+}
+
+if (
+    !$nome || !$telefone || !$email || !$area || !$mensagem ||
+    !filter_var($email, FILTER_VALIDATE_EMAIL) ||
+    strlen($mensagem) > 5000
+) {
     redirect_with_status('erro');
 }
 

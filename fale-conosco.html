@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="description" content="Entre em contato com a RBB Automação para automação industrial e soluções técnicas.">
   <meta name="keywords" content="automação industrial, automação de processos, retrofit de máquinas, inversores de frequência, IHM, SCADA, automação industrial RJ">
   <meta name="author" content="RBB Automação">
@@ -44,9 +45,9 @@
         </nav>
 
         <div class="header-social" aria-label="Redes sociais">
-          <a href="https://www.linkedin.com/in/leandro-santos-10831b141/" target="_blank" rel="noopener" aria-label="LinkedIn da RBB Automação"><img src="assets/img/social/linkedin-preto.png" alt=""></a>
-          <a href="https://www.instagram.com/accounts/onetap/" target="_blank" rel="noopener" aria-label="Instagram da RBB Automação"><img src="assets/img/social/instagram-preto.png" alt=""></a>
-          <a href="https://wa.me/21993860628" target="_blank" rel="noopener" aria-label="WhatsApp da RBB Automação"><img src="assets/img/social/whatsapp-preto.png" alt=""></a>
+          <a href="https://www.linkedin.com/in/leandro-santos-10831b141/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da RBB Automação"><img src="assets/img/social/linkedin-preto.png" alt=""></a>
+          <a href="https://www.instagram.com/accounts/onetap/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da RBB Automação"><img src="assets/img/social/instagram-preto.png" alt=""></a>
+          <a href="https://wa.me/21993860628" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da RBB Automação"><img src="assets/img/social/whatsapp-preto.png" alt=""></a>
         </div>
       </div>
     </div>
@@ -99,28 +100,32 @@
             <div class="field-grid">
               <div class="field">
                 <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" required>
+                <input type="text" id="nome" name="nome" autocomplete="name" required>
               </div>
               <div class="field">
                 <label for="empresa">Empresa</label>
-                <input type="text" id="empresa" name="empresa" required>
+                <input type="text" id="empresa" name="empresa" autocomplete="organization" required>
               </div>
               <div class="field">
                 <label for="telefone">Telefone</label>
-                <input type="tel" id="telefone" name="telefone" required>
+                <input type="tel" id="telefone" name="telefone" inputmode="tel" autocomplete="tel" required>
               </div>
               <div class="field">
                 <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" autocomplete="email" required>
               </div>
             </div>
             <div class="field">
               <label for="servico">Serviço de interesse</label>
-              <input type="text" id="servico" name="servico" required>
+              <input type="text" id="servico" name="servico" autocomplete="off" required>
             </div>
             <div class="field">
               <label for="mensagem">Mensagem</label>
               <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+            </div>
+            <div class="field" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
             </div>
             <input type="hidden" name="_subject" value="Contato pelo site - RBB Automação">
             <button class="btn btn-primary" type="submit">Enviar solicitação</button>
@@ -136,9 +141,9 @@
         <img class="footer-logo" src="assets/img/logo/logo-footer-branco.png" alt="RBB Automação">
         <p>Otimizando Processo, Conectando Coisas Industriais</p>
         <div class="footer-social">
-          <a href="https://www.linkedin.com/in/leandro-santos-10831b141/" target="_blank" rel="noopener" aria-label="LinkedIn da RBB Automação"><img src="assets/img/social/linkedin-branco.png" alt=""></a>
-          <a href="https://www.instagram.com/accounts/onetap/" target="_blank" rel="noopener" aria-label="Instagram da RBB Automação"><img src="assets/img/social/instagram-branco.png" alt=""></a>
-          <a href="https://wa.me/21993860628" target="_blank" rel="noopener" aria-label="WhatsApp da RBB Automação"><img src="assets/img/social/whatsapp-branco.png" alt=""></a>
+          <a href="https://www.linkedin.com/in/leandro-santos-10831b141/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da RBB Automação"><img src="assets/img/social/linkedin-branco.png" alt=""></a>
+          <a href="https://www.instagram.com/accounts/onetap/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da RBB Automação"><img src="assets/img/social/instagram-branco.png" alt=""></a>
+          <a href="https://wa.me/21993860628" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da RBB Automação"><img src="assets/img/social/whatsapp-branco.png" alt=""></a>
         </div>
       </div>
 
@@ -166,8 +171,8 @@
         <h3>Institucional</h3>
         <ul class="footer-list">
           <li><a href="trabalhe-aqui.html">Trabalhe Conosco</a></li>
-          <li><a href="#">Política de Cookies</a></li>
-          <li><a href="#">Declaração Privada</a></li>
+          <li><a href="politica-de-cookies.html">Política de Cookies</a></li>
+          <li><a href="declaracao-de-privacidade.html">Declaração de Privacidade</a></li>
           <li><span>CNPJ: 63.802.688/0001-43</span></li>
         </ul>
       </div>
