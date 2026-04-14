@@ -90,6 +90,11 @@
     object-position: center;
   }
 
+  .hero-cta {
+    margin-top: 1rem;
+    justify-content: flex-start;
+  }
+
   .services-grid {
     grid-template-columns: 1fr;
   }
@@ -149,5 +154,12 @@
 
   .maintenance-actions .btn {
     width: 100%;
+  }
+
+  .whatsapp-float {
+    right: 12px;
+    bottom: 12px;
+    width: 52px;
+    height: 52px;
   }
 }
