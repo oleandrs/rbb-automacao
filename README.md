@@ -1,36 +1,53 @@
-# RBB Automação - Site institucional
+# RBB Automacao - Site institucional
 
-Estrutura pronta para publicação em hospedagem tradicional, incluindo HostGator.
+Estrutura pronta para publicacao em hospedagem tradicional.
 
 ## Arquivos principais
-- `index.html` -> página principal (Home, Sobre Nós, Serviços)
-- `projetos.html` -> página em manutenção
-- `treinamentos.html` -> página em manutenção
-- `fale-conosco.html` -> página de contato
-- `trabalhe-aqui.html` -> página de recrutamento
-- `send-contact.php` -> processamento do formulário de contato
-- `send-careers.php` -> processamento do formulário Trabalhe Conosco
-- `obrigado.html` -> página de retorno após envio
+- `index.html` -> pagina principal (Home, Sobre Nos, Servicos)
+- `projetos.html` -> pagina em manutencao
+- `treinamentos.html` -> pagina em manutencao
+- `fale-conosco.html` -> pagina de contato
+- `trabalhe-aqui.html` -> pagina de recrutamento
+- `send-contact.php` -> processamento do formulario de contato (SMTP autenticado)
+- `send-careers.php` -> processamento do formulario Trabalhe Conosco (SMTP autenticado)
+- `smtp-mailer.php` -> cliente SMTP compartilhado
+- `obrigado.html` -> pagina de retorno apos envio
 
-## Dados já configurados
+## Dados configurados
 - E-mail comercial exibido: `contato@rbbautomacao.com.br`
-- E-mail de recebimento dos formulários: `contato@rbbautomacao.com.br`
+- E-mail de destino dos formularios: `contato@rbbautomacao.com.br`
 - Telefone/WhatsApp: `+55 21 99386-0628`
 - LinkedIn: `https://www.linkedin.com/in/leandro-santos-10831b141/`
 - Instagram: `https://www.instagram.com/accounts/onetap/`
 - WhatsApp link: `https://wa.me/21993860628`
 
-## Como publicar na HostGator
-1. Compacte ou envie todos os arquivos desta pasta para `public_html`.
-2. Mantenha a estrutura das pastas `assets`.
-3. Verifique se o PHP está habilitado no plano.
-4. Faça um teste real dos formulários após a publicação.
+## Publicacao
+1. Envie os arquivos para `public_html`.
+2. Mantenha a estrutura da pasta `assets`.
+3. Garanta que o PHP esteja habilitado.
+4. Configure SMTP no servidor antes de testar os formularios.
 
-## Atenção sobre os formulários
-Os formulários usam `mail()` do PHP. Em alguns ambientes isso pode exigir ajuste no servidor. Se preferir mais confiabilidade depois, o recomendado é trocar por SMTP autenticado.
+## Configuracao SMTP
+Os formularios `send-contact.php` e `send-careers.php` usam SMTP autenticado.
 
-## Personalizações rápidas
+Opcao 1 (recomendada): variaveis de ambiente
+- `SMTP_HOST`
+- `SMTP_PORT` (ex.: `587`)
+- `SMTP_USERNAME`
+- `SMTP_PASSWORD`
+- `SMTP_ENCRYPTION` (`tls`, `ssl` ou `none`)
+- `SMTP_FROM_EMAIL` (opcional; padrao = `SMTP_USERNAME`)
+- `SMTP_FROM_NAME` (opcional)
+- `SMTP_TIMEOUT` (opcional; padrao = `15`)
+
+Opcao 2: arquivo local fora do Git
+1. Copie `smtp-config.local.example.php` para `smtp-config.local.php`.
+2. Preencha os dados SMTP no arquivo local.
+3. Nao commite `smtp-config.local.php` (ja listado no `.gitignore`).
+
+## Personalizacoes rapidas
 - Textos: edite os arquivos `.html`
 - Cores e layout: edite os arquivos em `assets/css`
 - Comportamentos: edite `assets/js/main.js`
-- E-mail de destino dos formulários: altere `send-contact.php` e `send-careers.php`
+- Destino dos formularios: altere `send-contact.php` e `send-careers.php`
+
