@@ -12,6 +12,16 @@ function redirect_with_status($status) {
     exit;
 }
 
+function handle_send_error(string $sendError): void {
+    $requestId = bin2hex(random_bytes(6));
+    error_log("SMTP contact send failed [{$requestId}]: {$sendError}");
+    http_response_code(502);
+    header('Content-Type: text/plain; charset=UTF-8');
+    echo "Nao foi possivel enviar sua mensagem agora. Tente novamente em alguns minutos.\n";
+    echo "Codigo de diagnostico: {$requestId}\n";
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     redirect_with_status('erro');
 }
@@ -40,7 +50,7 @@ $sendError = null;
 $sent = smtp_send_mail($destinationEmail, $subject, $body, $email, $sendError);
 
 if (!$sent) {
-    error_log('SMTP contact send failed: ' . $sendError);
+    handle_send_error($sendError ?? 'Unknown SMTP error');
 }
 
 redirect_with_status($sent ? 'ok' : 'erro');
