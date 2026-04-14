@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/smtp-mailer.php';
+
 $destinationEmail = 'contato@rbbautomacao.com.br';
 
 function clean_input($value) {
@@ -13,45 +15,33 @@ function redirect_with_status($status) {
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     redirect_with_status('erro');
 }
-?>
-<?php
+
 $nome = clean_input($_POST['nome'] ?? '');
 $empresa = clean_input($_POST['empresa'] ?? '');
 $telefone = clean_input($_POST['telefone'] ?? '');
 $email = clean_input($_POST['email'] ?? '');
 $servico = clean_input($_POST['servico'] ?? '');
 $mensagem = trim($_POST['mensagem'] ?? '');
-$subject = clean_input($_POST['_subject'] ?? 'Contato pelo site - RBB Automação');
+$subject = clean_input($_POST['_subject'] ?? 'Contato pelo site - RBB Automacao');
 
 if (!$nome || !$empresa || !$telefone || !$email || !$servico || !$mensagem || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     redirect_with_status('erro');
 }
 
-$body = "Novo contato recebido pelo site da RBB Automação
+$body = "Novo contato recebido pelo site da RBB Automacao\r\n\r\n" .
+        "Nome: {$nome}\r\n" .
+        "Empresa: {$empresa}\r\n" .
+        "Telefone: {$telefone}\r\n" .
+        "E-mail: {$email}\r\n" .
+        "Servico de interesse: {$servico}\r\n\r\n" .
+        "Mensagem:\r\n{$mensagem}\r\n";
 
-" .
-        "Nome: {$nome}
-" .
-        "Empresa: {$empresa}
-" .
-        "Telefone: {$telefone}
-" .
-        "E-mail: {$email}
-" .
-        "Serviço de interesse: {$servico}
+$sendError = null;
+$sent = smtp_send_mail($destinationEmail, $subject, $body, $email, $sendError);
 
-" .
-        "Mensagem:
-{$mensagem}
-";
+if (!$sent) {
+    error_log('SMTP contact send failed: ' . $sendError);
+}
 
-$headers = "From: RBB Automação <no-reply@" . ($_SERVER['HTTP_HOST'] ?? 'localhost') . ">
-";
-$headers .= "Reply-To: {$email}
-";
-$headers .= "Content-Type: text/plain; charset=UTF-8
-";
-
-$sent = @mail($destinationEmail, '=?UTF-8?B?' . base64_encode($subject) . '?=', $body, $headers);
 redirect_with_status($sent ? 'ok' : 'erro');
-?>
+
