@@ -5,6 +5,7 @@
   background: rgba(255, 255, 255, 0.98);
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
 .header-inner {
@@ -71,6 +72,10 @@
 .main-nav a:hover::after,
 .main-nav a.is-active::after {
   transform: scaleX(1);
+}
+
+.main-nav a.is-active {
+  color: var(--primary);
 }
 
 .header-social {
@@ -200,6 +205,7 @@
 .footer-list a,
 .footer-list span {
   color: rgba(255,255,255,.78);
+  transition: color var(--transition);
 }
 
 .footer-list a:hover {
@@ -445,4 +451,23 @@
   padding-left: 1rem;
   display: grid;
   gap: .55rem;
+}
+
+.hero-trust-card {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+  box-shadow: var(--shadow-soft);
+  padding: 1.25rem 1.2rem;
+}
+
+.hero-trust-card strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: .35rem;
+}
+
+.hero-trust-card p {
+  color: var(--text-soft);
+  font-size: .95rem;
 }
