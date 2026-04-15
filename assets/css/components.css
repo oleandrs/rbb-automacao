@@ -45,6 +45,8 @@
   align-items: center;
   gap: 2.25rem;
   flex-wrap: wrap;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .main-nav a {
@@ -103,6 +105,20 @@
   width: 40px;
   height: 40px;
   object-fit: contain;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.header-cta {
+  min-height: 46px;
+  padding-inline: 1.2rem;
+  font-size: .86rem;
+  white-space: nowrap;
 }
 
 .menu-toggle {
@@ -435,6 +451,34 @@
   justify-content: center;
   gap: 1rem;
   margin-top: 2rem;
+}
+
+.hero-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .9rem;
+  margin-top: .5rem;
+}
+
+.hero-highlight {
+  padding: 1rem 1.05rem;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, .06);
+  background: rgba(255, 255, 255, .72);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(8px);
+}
+
+.hero-highlight strong {
+  display: block;
+  margin-bottom: .3rem;
+  font-size: .95rem;
+  line-height: 1.2;
+}
+
+.hero-highlight span {
+  color: var(--text-soft);
+  font-size: .92rem;
 }
 
 .info-panel {
