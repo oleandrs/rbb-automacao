@@ -102,10 +102,6 @@
     font-size: clamp(2.5rem, 10vw, 3.4rem);
   }
 
-  .hero-copy p {
-    font-size: 1rem;
-  }
-
   .hero-actions {
     width: 100%;
   }
@@ -114,21 +110,8 @@
     width: 100%;
   }
 
-  .hero-points {
-    gap: .55rem;
-  }
-
-  .hero-points li {
-    width: 100%;
-    justify-content: center;
-  }
-
   .hero-visual__frame {
     min-height: 280px;
-  }
-
-  .hero-fact-grid {
-    grid-template-columns: 1fr;
   }
 
   .services-grid {
