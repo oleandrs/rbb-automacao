@@ -22,17 +22,16 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .hero-banner__content {
+  .hero-shell {
     grid-template-columns: 1fr;
-    align-items: end;
   }
 
-  .hero-actions-card {
-    max-width: 480px;
+  .hero-copy h1 {
+    max-width: 10ch;
   }
 
-  .hero-cta {
-    grid-template-columns: 1fr;
+  .hero-visual__frame {
+    min-height: 380px;
   }
 }
 
@@ -98,33 +97,38 @@
     padding-top: .25rem;
   }
 
-  .hero-banner img {
-    height: 280px;
-    object-position: center;
-  }
-
-  .hero-banner__content {
-    position: static;
-    padding: 1.4rem;
-    gap: 1rem;
-    background: linear-gradient(180deg, rgba(12, 12, 12, 0.98), rgba(24, 24, 24, 0.98));
-  }
-
-  .hero-banner::after {
-    display: none;
-  }
-
   .hero-copy h1 {
-    font-size: clamp(2rem, 9vw, 3rem);
-  }
-
-  .hero-cta {
-    margin-top: 1rem;
-    justify-content: flex-start;
-  }
-
-  .hero-actions-card {
     max-width: none;
+    font-size: clamp(2.5rem, 10vw, 3.4rem);
+  }
+
+  .hero-copy p {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-points {
+    gap: .55rem;
+  }
+
+  .hero-points li {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-visual__frame {
+    min-height: 280px;
+  }
+
+  .hero-fact-grid {
+    grid-template-columns: 1fr;
   }
 
   .services-grid {
@@ -185,14 +189,6 @@
   }
 
   .maintenance-actions .btn {
-    width: 100%;
-  }
-
-  .hero-cta-actions {
-    flex-direction: column;
-  }
-
-  .hero-cta-actions .btn {
     width: 100%;
   }
 
