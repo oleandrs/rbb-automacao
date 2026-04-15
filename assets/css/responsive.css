@@ -21,6 +21,19 @@
   .services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .hero-banner__content {
+    grid-template-columns: 1fr;
+    align-items: end;
+  }
+
+  .hero-actions-card {
+    max-width: 480px;
+  }
+
+  .hero-cta {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 860px) {
@@ -86,13 +99,32 @@
   }
 
   .hero-banner img {
-    min-height: 280px;
+    height: 280px;
     object-position: center;
+  }
+
+  .hero-banner__content {
+    position: static;
+    padding: 1.4rem;
+    gap: 1rem;
+    background: linear-gradient(180deg, rgba(12, 12, 12, 0.98), rgba(24, 24, 24, 0.98));
+  }
+
+  .hero-banner::after {
+    display: none;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
   }
 
   .hero-cta {
     margin-top: 1rem;
     justify-content: flex-start;
+  }
+
+  .hero-actions-card {
+    max-width: none;
   }
 
   .services-grid {
@@ -153,6 +185,14 @@
   }
 
   .maintenance-actions .btn {
+    width: 100%;
+  }
+
+  .hero-cta-actions {
+    flex-direction: column;
+  }
+
+  .hero-cta-actions .btn {
     width: 100%;
   }
 
