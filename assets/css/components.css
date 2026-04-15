@@ -73,6 +73,28 @@
   transform: scaleX(1);
 }
 
+.main-nav a.nav-cta {
+  min-height: 42px;
+  padding: 0 .95rem;
+  border-radius: 999px;
+  border: 1px solid rgba(204, 0, 0, 0.42);
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: .05em;
+  background: rgba(204, 0, 0, 0.06);
+}
+
+.main-nav a.nav-cta::after {
+  content: none;
+}
+
+.main-nav a.nav-cta:hover,
+.main-nav a.nav-cta.is-active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
 .header-social {
   display: flex;
   align-items: center;

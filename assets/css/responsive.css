@@ -77,6 +77,12 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
 
+  .main-nav a.nav-cta {
+    margin-top: .75rem;
+    justify-content: center;
+    min-height: 48px;
+  }
+
   .main-nav a:last-child {
     border-bottom: 0;
   }
