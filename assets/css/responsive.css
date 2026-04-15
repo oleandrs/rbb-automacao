@@ -30,6 +30,10 @@
     max-width: 10ch;
   }
 
+  .hero-highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .hero-visual__frame {
     min-height: 380px;
   }
@@ -93,8 +97,20 @@
     border-bottom: 0;
   }
 
+  .header-actions {
+    width: 100%;
+    margin-left: 0;
+    display: grid;
+    gap: .85rem;
+  }
+
+  .header-cta {
+    width: 100%;
+  }
+
   .header-social {
     padding-top: .25rem;
+    justify-content: flex-start;
   }
 
   .hero-copy h1 {
@@ -108,6 +124,10 @@
 
   .hero-actions .btn {
     width: 100%;
+  }
+
+  .hero-highlights {
+    grid-template-columns: 1fr;
   }
 
   .hero-visual__frame {
