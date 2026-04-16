@@ -1,40 +1,52 @@
+const siteHeader = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
-const headerBottom = document.querySelector('.header-bottom');
+const mainNav = document.querySelector('.main-nav');
 
 const closeMenu = () => {
-  if (!menuToggle || !headerBottom) return;
-  headerBottom.classList.remove('is-open');
+  if (!menuToggle || !mainNav) return;
+  mainNav.classList.remove('is-open');
   menuToggle.classList.remove('is-active');
   menuToggle.setAttribute('aria-expanded', 'false');
   document.body.classList.remove('menu-open');
 };
 
-if (menuToggle && headerBottom) {
+if (menuToggle && mainNav) {
   menuToggle.addEventListener('click', () => {
-    const isOpen = headerBottom.classList.toggle('is-open');
+    const isOpen = mainNav.classList.toggle('is-open');
     menuToggle.classList.toggle('is-active', isOpen);
     menuToggle.setAttribute('aria-expanded', String(isOpen));
     document.body.classList.toggle('menu-open', isOpen);
   });
 
-  headerBottom.addEventListener('click', (event) => {
+  mainNav.addEventListener('click', (event) => {
     if (window.innerWidth <= 860 && event.target.closest('a')) {
       closeMenu();
     }
   });
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 860) {
-      closeMenu();
-    }
+    if (window.innerWidth > 860) closeMenu();
   });
 
   window.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && headerBottom.classList.contains('is-open')) {
+    if (event.key === 'Escape' && mainNav.classList.contains('is-open')) {
       closeMenu();
       menuToggle.focus();
     }
   });
+}
+
+if (siteHeader) {
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    const scrollingDown = currentScrollY > lastScrollY;
+    const passedThreshold = currentScrollY > 120;
+
+    siteHeader.classList.toggle('is-hidden', scrollingDown && passedThreshold && window.innerWidth > 860);
+    lastScrollY = currentScrollY;
+  }, { passive: true });
 }
 
 const revealItems = document.querySelectorAll('.reveal');
@@ -54,16 +66,34 @@ if ('IntersectionObserver' in window && revealItems.length) {
   revealItems.forEach((item) => item.classList.add('is-visible'));
 }
 
-const whatsappLink = 'https://wa.me/5521993860628';
+const sectionLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+const pageSections = [...sectionLinks]
+  .map((link) => document.querySelector(link.getAttribute('href')))
+  .filter(Boolean);
+
+if (sectionLinks.length && pageSections.length && 'IntersectionObserver' in window) {
+  const navMap = new Map([...sectionLinks].map((link) => [link.getAttribute('href'), link]));
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const currentId = `#${entry.target.id}`;
+      navMap.forEach((link) => link.classList.remove('is-active'));
+      navMap.get(currentId)?.classList.add('is-active');
+    });
+  }, { threshold: 0.45 });
+
+  pageSections.forEach((section) => sectionObserver.observe(section));
+}
 
 if (!document.querySelector('.whatsapp-float')) {
   const floatButton = document.createElement('a');
   floatButton.className = 'whatsapp-float';
-  floatButton.href = whatsappLink;
+  floatButton.href = 'https://wa.me/5521993860628';
   floatButton.target = '_blank';
   floatButton.rel = 'noopener';
   floatButton.setAttribute('aria-label', 'Abrir conversa no WhatsApp');
-  floatButton.textContent = 'WA';
+  floatButton.textContent = 'WhatsApp';
   document.body.appendChild(floatButton);
 }
 
@@ -73,11 +103,8 @@ const clearFieldError = (field) => {
   field.classList.remove('is-invalid');
   field.removeAttribute('aria-invalid');
   const container = field.closest('.field');
-  if (!container) return;
-  const error = container.querySelector('.field-error');
-  if (error) {
-    error.remove();
-  }
+  const error = container?.querySelector('.field-error');
+  if (error) error.remove();
 };
 
 const showFieldError = (field) => {
@@ -96,9 +123,7 @@ contactForms.forEach((form) => {
 
   requiredFields.forEach((field) => {
     field.addEventListener('input', () => {
-      if (field.checkValidity()) {
-        clearFieldError(field);
-      }
+      if (field.checkValidity()) clearFieldError(field);
     });
   });
 
@@ -115,8 +140,27 @@ contactForms.forEach((form) => {
 
     if (hasError) {
       event.preventDefault();
-      const firstInvalid = form.querySelector('.is-invalid');
-      if (firstInvalid) firstInvalid.focus();
+      form.querySelector('.is-invalid')?.focus();
     }
   });
 });
+
+const statusCard = document.querySelector('[data-status-card]');
+
+if (statusCard) {
+  const badge = statusCard.querySelector('[data-status-badge]');
+  const title = statusCard.querySelector('[data-status-title]');
+  const message = statusCard.querySelector('[data-status-message]');
+  const status = new URLSearchParams(window.location.search).get('status');
+
+  if (status === 'ok') {
+    badge.textContent = 'Envio confirmado';
+    title.textContent = 'Recebemos sua solicitação.';
+    message.textContent = 'Obrigado pelo contato. Nossa equipe analisará as informações e retornará pelo canal informado.';
+  } else if (status === 'erro') {
+    statusCard.classList.add('is-error');
+    badge.textContent = 'Falha no envio';
+    title.textContent = 'Não foi possível concluir o envio.';
+    message.textContent = 'Tente novamente em alguns minutos ou entre em contato diretamente pelo WhatsApp ou e-mail.';
+  }
+}

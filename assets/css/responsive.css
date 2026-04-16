@@ -1,55 +1,34 @@
 @media (max-width: 1140px) {
-  .main-nav {
-    gap: 1.35rem;
-  }
-
-  .main-nav a {
-    font-size: .82rem;
-  }
-
   .about-grid,
+  .about-grid--wide,
   .services-header,
+  .process-grid,
+  .process-grid--simple,
   .form-layout,
-  .footer-grid {
+  .footer-grid,
+  .cta-panel,
+  .cta-section .cta-panel {
     grid-template-columns: 1fr;
   }
 
-  .about-image {
-    justify-self: start;
-  }
-
-  .services-grid {
+  .services-grid,
+  .services-grid--compact {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .hero-shell {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-copy h1 {
-    max-width: 12ch;
-  }
-
-  .hero-highlights {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .hero-visual__frame {
-    min-height: 380px;
-  }
-
-  .internal-hero__content {
-    max-width: 680px;
-  }
 }
 
 @media (max-width: 860px) {
   :root {
-    --header-height: 106px;
+    --header-height: 96px;
+  }
+
+  .about-brand {
+    justify-content: flex-start;
   }
 
   .brand {
-    width: 290px;
+    width: 220px;
   }
 
   .menu-toggle {
@@ -57,44 +36,42 @@
   }
 
   .header-inner {
-    padding-top: .9rem;
+    padding-top: 0.85rem;
   }
 
-  .header-top {
-    justify-content: flex-start;
+  .header-bar {
+    position: relative;
+    justify-content: space-between;
     min-height: 72px;
-    padding-bottom: 1rem;
   }
 
   .brand img {
     margin: 0;
   }
 
-  .header-bottom {
+  .main-nav {
     display: none;
-    min-height: auto;
-    border-top: 1px solid rgba(17, 17, 17, 0.08);
-    padding: 1rem 0 1.25rem;
+    position: absolute;
+    top: calc(100% + 0.6rem);
+    left: 0;
+    right: 0;
+    padding: 0.8rem 1rem 1rem;
+    border: 1px solid rgba(17, 17, 17, 0.12);
+    background: rgba(242, 242, 238, 0.98);
+    box-shadow: var(--shadow-soft);
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
   }
 
-  .header-bottom.is-open {
+  .main-nav.is-open {
     display: flex;
-  }
-
-  .main-nav {
-    width: 100%;
-    display: grid;
-    gap: 0;
   }
 
   .main-nav a {
     width: 100%;
-    font-size: .92rem;
-    padding: .8rem 0;
-    border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.1);
   }
 
   .main-nav a:last-child {
@@ -102,56 +79,43 @@
   }
 
   .header-actions {
-    width: 100%;
-    margin-left: 0;
-    display: grid;
-    gap: .85rem;
-  }
-
-  .header-cta {
-    width: 100%;
+    margin-left: auto;
   }
 
   .header-social {
-    padding-top: .25rem;
-    justify-content: flex-start;
+    display: none;
   }
 
-  .hero-copy h1 {
+  .hero-banner__inner h1 {
     max-width: none;
-    font-size: clamp(2.5rem, 10vw, 3.45rem);
+    font-size: clamp(2.4rem, 10vw, 3.5rem);
   }
 
-  .hero-actions {
-    width: 100%;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-  }
-
-  .hero-highlights {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-visual__frame {
-    min-height: 280px;
-  }
-
-  .internal-hero__content p {
-    max-width: 34ch;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .services-grid,
+  .services-grid--compact,
   .field-grid {
     grid-template-columns: 1fr;
   }
 
-  .site-footer {
-    padding-bottom: 2rem;
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+
+  .internal-hero__content p:last-child {
+    max-width: 34ch;
+  }
+
+  .whatsapp-float {
+    min-width: 56px;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    font-size: 0;
+  }
+
+  .whatsapp-float::before {
+    content: 'WA';
+    font-size: 0.76rem;
   }
 }
 
@@ -160,39 +124,43 @@
     width: min(calc(100% - 1.25rem), var(--container));
   }
 
-  .site-header {
-    position: sticky;
-  }
-
   .brand {
-    width: 228px;
+    width: 224px;
   }
 
-  .header-social a {
+  .footer-social a {
     width: 40px;
     height: 40px;
-  }
-
-  .header-social img {
-    width: 34px;
-    height: 34px;
   }
 
   .about-section,
   .services-section,
   .form-page-section,
-  .maintenance-section {
+  .maintenance-section,
+  .process-section,
+  .cta-section {
     padding: 4rem 0;
   }
 
-  .service-card,
-  .form-shell,
-  .maintenance-card {
-    padding: 1.5rem;
+  .hero-banner {
+    min-height: 72vh;
   }
 
+  .hero-banner__inner h1,
+  .internal-hero__content h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .maintenance-card,
+  .form-shell,
+  .cta-panel,
+  .timeline-item {
+    padding: 1.4rem;
+  }
+
+
   .internal-hero {
-    min-height: 260px;
+    min-height: 250px;
   }
 
   .maintenance-actions {
@@ -201,28 +169,5 @@
 
   .maintenance-actions .btn {
     width: 100%;
-  }
-
-  .whatsapp-float {
-    right: 12px;
-    bottom: 12px;
-    width: 52px;
-    height: 52px;
-  }
-
-  .hero-shell {
-    border-radius: 30px;
-  }
-
-  .hero-copy h1 {
-    letter-spacing: -.028em;
-  }
-
-  .internal-hero {
-    min-height: 240px;
-  }
-
-  .internal-hero__content h1 {
-    font-size: clamp(2rem, 8vw, 2.8rem);
   }
 }
