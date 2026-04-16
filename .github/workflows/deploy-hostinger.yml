@@ -31,6 +31,7 @@ jobs:
             set ftp:ssl-allow no;
             set ssl:verify-certificate no;
             open -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_HOST};
+            cd public_html;
             mirror -R \
               --delete \
               --verbose \
@@ -39,5 +40,5 @@ jobs:
               --exclude-glob alteracoes-site.patch \
               --exclude-glob smtp-config.local.php \
               --exclude-glob .github \
-              ./ /;
+              ./ ./;
           "
