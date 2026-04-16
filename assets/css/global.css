@@ -1,20 +1,20 @@
 :root {
-  --primary: rgb(204, 0, 0);
-  --primary-dark: #a80000;
-  --accent: #1a1a1a;
-  --bg: #ffffff;
-  --surface: #f7f7f7;
+  --primary: #c31212;
+  --primary-dark: #8f0d0d;
+  --accent: #141414;
+  --bg: #fffdfb;
+  --surface: #f7f4f2;
   --surface-2: #111111;
   --text: #111111;
-  --text-soft: #4f4f4f;
-  --line: #e6e6e6;
+  --text-soft: #55504a;
+  --line: #e7dfd9;
   --white: #ffffff;
   --container: 1240px;
-  --radius: 22px;
-  --radius-sm: 14px;
+  --radius: 24px;
+  --radius-sm: 16px;
   --header-height: 188px;
-  --shadow-soft: 0 18px 36px rgba(0, 0, 0, 0.08);
-  --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.10);
+  --shadow-soft: 0 18px 36px rgba(20, 20, 20, 0.08);
+  --shadow-card: 0 28px 60px rgba(20, 20, 20, 0.12);
   --transition: 0.28s ease;
 }
 
@@ -32,8 +32,9 @@ body {
   font-family: 'Work Sans', 'Segoe UI', Arial, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top, rgba(204, 0, 0, 0.06), transparent 28%),
-    linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+    radial-gradient(circle at top left, rgba(195, 18, 18, 0.08), transparent 28%),
+    radial-gradient(circle at top right, rgba(17, 17, 17, 0.04), transparent 24%),
+    linear-gradient(180deg, #fffdfb 0%, #faf7f4 100%);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -63,12 +64,12 @@ button {
 }
 
 :focus-visible {
-  outline: 3px solid rgba(204, 0, 0, 0.4);
+  outline: 3px solid rgba(195, 18, 18, 0.42);
   outline-offset: 3px;
 }
 
 ::selection {
-  background: rgba(204, 0, 0, 0.14);
+  background: rgba(195, 18, 18, 0.16);
 }
 
 textarea {
@@ -96,7 +97,7 @@ h3 {
 
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(22px);
   transition: opacity .75s ease, transform .75s ease;
 }
 
@@ -107,9 +108,9 @@ h3 {
 
 .eyebrow {
   display: inline-block;
-  padding: .35rem .75rem;
+  padding: .42rem .8rem;
   border-radius: 999px;
-  background: rgba(204, 0, 0, 0.08);
+  background: rgba(195, 18, 18, 0.08);
   color: var(--primary);
   font-size: .8rem;
   font-weight: 700;
@@ -128,7 +129,13 @@ h3 {
   border: 1px solid transparent;
   font-weight: 700;
   letter-spacing: .01em;
-  transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition),
+    opacity var(--transition);
 }
 
 .btn:hover {
@@ -136,19 +143,20 @@ h3 {
 }
 
 .btn-primary {
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, #db1616 100%);
   color: var(--white);
-  box-shadow: 0 16px 30px rgba(204, 0, 0, 0.18);
+  box-shadow: 0 16px 30px rgba(195, 18, 18, 0.24);
 }
 
 .btn-primary:hover {
-  background: var(--primary-dark);
+  background: linear-gradient(135deg, var(--primary-dark) 0%, #a51616 100%);
+  box-shadow: 0 18px 34px rgba(195, 18, 18, 0.28);
 }
 
 .btn-outline {
   border-color: var(--primary);
   color: var(--primary);
-  background: transparent;
+  background: rgba(195, 18, 18, 0.03);
 }
 
 .btn-outline:hover {
