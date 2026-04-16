@@ -10,11 +10,19 @@ function smtp_env(string $key, $default = null) {
 
 function smtp_load_config(): array {
     $config = [];
-    $configPath = smtp_env('SMTP_CONFIG_PATH', __DIR__ . DIRECTORY_SEPARATOR . 'smtp-config.local.php');
-    if ($configPath && is_file($configPath)) {
-        $fileConfig = require $configPath;
-        if (is_array($fileConfig)) {
-            $config = $fileConfig;
+    $preferredPath = smtp_env('SMTP_CONFIG_PATH', __DIR__ . DIRECTORY_SEPARATOR . 'smtp-config.local.php');
+    $fallbackPaths = [
+        $preferredPath,
+        __DIR__ . DIRECTORY_SEPARATOR . 'smtp-config.local.example.php',
+    ];
+
+    foreach ($fallbackPaths as $configPath) {
+        if ($configPath && is_file($configPath)) {
+            $fileConfig = require $configPath;
+            if (is_array($fileConfig)) {
+                $config = $fileConfig;
+                break;
+            }
         }
     }
 
