@@ -17,8 +17,8 @@ function handle_send_error(string $sendError): void {
     error_log("SMTP contact send failed [{$requestId}]: {$sendError}");
     http_response_code(502);
     header('Content-Type: text/plain; charset=UTF-8');
-    echo "Nao foi possivel enviar sua mensagem agora. Tente novamente em alguns minutos.\n";
-    echo "Codigo de diagnostico: {$requestId}\n";
+    echo "Não foi possível enviar sua mensagem agora. Tente novamente em alguns minutos.\n";
+    echo "Código de diagnóstico: {$requestId}\n";
     exit;
 }
 
@@ -32,18 +32,18 @@ $telefone = clean_input($_POST['telefone'] ?? '');
 $email = clean_input($_POST['email'] ?? '');
 $servico = clean_input($_POST['servico'] ?? '');
 $mensagem = trim($_POST['mensagem'] ?? '');
-$subject = clean_input($_POST['_subject'] ?? 'Contato pelo site - RBB Automacao');
+$subject = clean_input($_POST['_subject'] ?? 'Contato pelo site - RBB Automação');
 
 if (!$nome || !$empresa || !$telefone || !$email || !$servico || !$mensagem || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     redirect_with_status('erro');
 }
 
-$body = "Novo contato recebido pelo site da RBB Automacao\r\n\r\n" .
+$body = "Novo contato recebido pelo site da RBB Automação\r\n\r\n" .
         "Nome: {$nome}\r\n" .
         "Empresa: {$empresa}\r\n" .
         "Telefone: {$telefone}\r\n" .
         "E-mail: {$email}\r\n" .
-        "Servico de interesse: {$servico}\r\n\r\n" .
+        "Serviço de interesse: {$servico}\r\n\r\n" .
         "Mensagem:\r\n{$mensagem}\r\n";
 
 $sendError = null;
@@ -53,5 +53,4 @@ if (!$sent) {
     handle_send_error($sendError ?? 'Unknown SMTP error');
 }
 
-redirect_with_status($sent ? 'ok' : 'erro');
-
+redirect_with_status('ok');

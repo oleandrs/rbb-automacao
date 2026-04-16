@@ -25,7 +25,7 @@ function smtp_load_config(): array {
         'password' => smtp_env('SMTP_PASSWORD', $config['password'] ?? null),
         'encryption' => strtolower((string) smtp_env('SMTP_ENCRYPTION', $config['encryption'] ?? 'tls')),
         'from_email' => smtp_env('SMTP_FROM_EMAIL', $config['from_email'] ?? null),
-        'from_name' => smtp_env('SMTP_FROM_NAME', $config['from_name'] ?? 'RBB Automacao'),
+        'from_name' => smtp_env('SMTP_FROM_NAME', $config['from_name'] ?? 'RBB Automação'),
         'timeout' => (int) smtp_env('SMTP_TIMEOUT', $config['timeout'] ?? 15),
     ];
 
@@ -120,7 +120,6 @@ function smtp_send_mail(string $toEmail, string $subject, string $bodyText, stri
         smtp_send_command($socket, 'AUTH LOGIN', [334]);
         smtp_send_command($socket, base64_encode((string) $smtp['username']), [334]);
         smtp_send_command($socket, base64_encode((string) $smtp['password']), [235]);
-
         smtp_send_command($socket, 'MAIL FROM:<' . $smtp['from_email'] . '>', [250]);
         smtp_send_command($socket, 'RCPT TO:<' . $toEmail . '>', [250, 251]);
         smtp_send_command($socket, 'DATA', [354]);
@@ -155,4 +154,3 @@ function smtp_send_mail(string $toEmail, string $subject, string $bodyText, stri
         return false;
     }
 }
-
