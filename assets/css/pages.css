@@ -388,20 +388,23 @@
   position: relative;
   z-index: 2;
   color: #ffffff;
-  max-width: 860px;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .internal-hero__content h1 {
-  margin: 0.75rem 0 0.8rem;
-  font-size: clamp(2.4rem, 4vw, 4.2rem);
-  line-height: 0.98;
-  text-transform: uppercase;
+    margin: 0.75rem 0 0.8rem;
+    font-size: clamp(2.4rem, 4vw, 4.2rem);
+    line-height: 0.98;
+    text-transform: uppercase;
 }
 
 .internal-hero__content p:last-child {
-  max-width: 52ch;
-  color: rgba(255, 255, 255, 0.84);
-  font-size: 1.02rem;
+    max-width: 58ch;
+    margin-inline: auto;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 1.02rem;
 }
 
 .form-layout {
