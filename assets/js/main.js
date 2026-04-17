@@ -1,6 +1,7 @@
-const siteHeader = document.querySelector('.site-header');
+﻿const siteHeader = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('.main-nav');
+const navCollapseBreakpoint = 1180;
 
 const closeMenu = () => {
   if (!menuToggle || !mainNav) return;
@@ -19,13 +20,13 @@ if (menuToggle && mainNav) {
   });
 
   mainNav.addEventListener('click', (event) => {
-    if (window.innerWidth <= 860 && event.target.closest('a')) {
+    if (window.innerWidth <= navCollapseBreakpoint && event.target.closest('a')) {
       closeMenu();
     }
   });
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 860) closeMenu();
+    if (window.innerWidth > navCollapseBreakpoint) closeMenu();
   });
 
   window.addEventListener('keydown', (event) => {
@@ -44,7 +45,7 @@ if (siteHeader) {
     const scrollingDown = currentScrollY > lastScrollY;
     const passedThreshold = currentScrollY > 120;
 
-    siteHeader.classList.toggle('is-hidden', scrollingDown && passedThreshold && window.innerWidth > 860);
+    siteHeader.classList.toggle('is-hidden', scrollingDown && passedThreshold && window.innerWidth > navCollapseBreakpoint);
     lastScrollY = currentScrollY;
   }, { passive: true });
 }
@@ -164,3 +165,4 @@ if (statusCard) {
     message.textContent = 'Tente novamente em alguns minutos ou entre em contato diretamente pelo WhatsApp ou e-mail.';
   }
 }
+
