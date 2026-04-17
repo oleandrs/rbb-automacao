@@ -29,12 +29,12 @@
 
 .brand {
   flex: 0 0 auto;
-  width: 260px;
+  width: 292px;
 }
 
 .brand img {
   width: 100%;
-  max-width: 260px;
+  max-width: 292px;
   height: auto;
 }
 
@@ -427,31 +427,32 @@
 }
 
 .whatsapp-float {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 1200;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 138px;
-  height: 48px;
-  padding: 0 0.95rem;
-  border: 1px solid rgba(17, 17, 17, 0.18);
-  background: #1f7f4d;
-  color: #ffffff;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  box-shadow: var(--shadow-soft);
-  transition: transform var(--transition), background var(--transition);
-}
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1200;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(17, 17, 17, 0.18);
+    background: #1f7f4d;
+    color: #ffffff;
+    border-radius: 999px;
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition), background var(--transition);
+  }
 
 .whatsapp-float:hover {
-  transform: translateY(-2px);
-  background: #17633c;
+    transform: translateY(-2px);
+    background: #17633c;
+  }
+
+.whatsapp-float img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
 }
 
 .maintenance-card {
