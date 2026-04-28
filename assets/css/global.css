@@ -1,14 +1,14 @@
 :root {
   --primary: #b51212;
   --primary-dark: #7f0c0c;
-  --bg: #f2f2ee;
-  --surface: #e5e3dc;
+  --bg: #f4f4f4;
+  --surface: #e8e8e8;
   --panel: #ffffff;
   --panel-dark: #0f0f10;
   --text: #0f1011;
   --text-soft: #4e5358;
   --text-light: rgba(255, 255, 255, 0.8);
-  --line: #b9b4ab;
+  --line: #c4c4c4;
   --container: 1260px;
   --header-height: 160px;
   --shadow-soft: 0 18px 48px rgba(0, 0, 0, 0.08);
@@ -34,7 +34,7 @@ body {
     linear-gradient(180deg, rgba(181, 18, 18, 0.08), transparent 24%),
     linear-gradient(90deg, rgba(17, 17, 17, 0.03) 1px, transparent 1px),
     linear-gradient(rgba(17, 17, 17, 0.03) 1px, transparent 1px),
-    linear-gradient(180deg, #f3f2ed 0%, #ebe8e1 100%);
+    linear-gradient(180deg, #f6f6f6 0%, #eeeeee 100%);
   background-size: auto, 44px 44px, 44px 44px, auto;
   line-height: 1.6;
   overflow-x: hidden;

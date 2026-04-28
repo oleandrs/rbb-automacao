@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Artigo da RBB Automação sobre revisão de lógica de CLP, intertravamentos, permissivos, diagnóstico industrial e redução de paradas em automação industrial."
+    />
+    <meta name="keywords" content="CLP, lógica de CLP, programação de CLP, diagnóstico de CLP, automação industrial RJ, IEC 61131-3, manutenção industrial" />
+    <meta name="author" content="RBB Automação" />
+    <meta name="theme-color" content="#b51212" />
+    <link rel="canonical" href="https://rbbautomacao.com.br/blog-clp-logica.html" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Quando revisar lógica de CLP antes da falha virar parada | RBB Automação" />
+    <meta property="og:description" content="Intertravamentos, permissivos e diagnósticos precisam acompanhar a rotina real da operação." />
+    <meta property="og:url" content="https://rbbautomacao.com.br/blog-clp-logica.html" />
+    <meta property="og:image" content="https://rbbautomacao.com.br/assets/img/content/blog-clp-logica-cover.png" />
+    <title>Quando revisar lógica de CLP antes da falha virar parada | RBB Automação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="assets/img/logo/logo-padrao.png" />
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body class="page-internal">
+    <header class="site-header" id="topo">
+      <div class="container header-inner">
+        <div class="header-bar">
+          <a class="brand" href="./index.html#home" aria-label="Página inicial da RBB Automação"><img src="assets/img/logo/logo-topo.png" alt="RBB Automação Industrial" /></a>
+          <nav class="main-nav" id="menu-principal" aria-label="Menu principal">
+            <a href="./index.html#home">Home</a>
+            <a href="index.html#sobre">Empresa</a>
+            <a href="index.html#servicos">Serviços</a>
+            <a href="projetos.html">Projetos</a>
+            <a href="treinamentos.html">Treinamentos</a>
+            <a class="is-active" href="blog.html">Blog</a>
+            <a href="fale-conosco.html">Contato</a>
+          </nav>
+          <div class="header-actions">
+            <div class="header-social" aria-label="Redes sociais">
+              <a href="https://www.linkedin.com/company/rbb-automa%C3%A7%C3%A3o/about/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn da RBB Automação"><img src="assets/img/social/linkedin-preto.png" alt="" /></a>
+              <a href="https://wa.me/5521993860628" target="_blank" rel="noopener" aria-label="WhatsApp da RBB Automação"><img src="assets/img/social/whatsapp-preto.png" alt="" /></a>
+            </div>
+            <a class="btn btn-primary header-cta" href="fale-conosco.html">Solicitar proposta</a>
+          </div>
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="internal-hero">
+        <div class="internal-hero__media"><img src="assets/img/content/blog-clp-logica-cover.png" alt="Técnico revisando lógica de CLP em painel industrial" /></div>
+        <div class="internal-hero__overlay"></div>
+        <div class="container internal-hero__content reveal">
+          <p class="section-index section-index--light">RBB BLOG</p>
+          <h1>Quando revisar lógica de CLP antes da falha virar parada.</h1>
+          <p>Intertravamentos, permissivos e diagnósticos precisam acompanhar a rotina real da operação.</p>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <div class="container article-layout">
+          <article class="blog-article reveal">
+            <span class="eyebrow">CLP e confiabilidade</span>
+            <h2>A lógica do CLP envelhece junto com a planta.</h2>
+            <p>
+              Uma máquina raramente para porque “o CLP deu problema” de forma isolada. Antes da parada, geralmente aparecem
+              sinais: operador usando modo manual para contornar falha, sensor forçado, alarme sem causa clara, permissivo
+              que não representa mais o campo ou intertravamento que ficou incoerente após uma modificação.
+            </p>
+            <p>
+              Revisar lógica de CLP não é mexer por mexer. É comparar o programa com a realidade atual da operação para
+              reduzir improviso, recuperar diagnóstico e proteger a continuidade do processo.
+            </p>
+
+            <div class="article-metrics">
+              <div class="article-metric">
+                <strong>45,7%</strong>
+                <span>Manutenção reativa</span>
+                <p>O NIST identificou esse valor médio de práticas reativas nas plantas pesquisadas em produção discreta.</p>
+              </div>
+              <div class="article-metric">
+                <strong>16x</strong>
+                <span>Mais defeitos</span>
+                <p>Plantas com maior dependência de manutenção reativa foram associadas a muito mais defeitos no estudo.</p>
+              </div>
+              <div class="article-metric">
+                <strong>IEC 61131-3</strong>
+                <span>Base de programação</span>
+                <p>Referência internacional para linguagens de programação de controladores industriais.</p>
+              </div>
+            </div>
+
+            <div class="article-band article-band--dark">
+              <h3>Se a operação aprendeu a conviver com bypass, forçamento e reset constante, a lógica já está pedindo revisão.</h3>
+              <p>
+                O custo aparece depois: partida instável, diagnóstico lento, risco operacional e dependência de pessoas específicas
+                para entender o que deveria estar claro no próprio sistema.
+              </p>
+            </div>
+
+            <figure class="article-figure">
+              <img src="assets/img/content/blog-clp-logica-cover.png" alt="Notebook conectado a painel com CLP industrial para diagnóstico" loading="lazy" />
+              <figcaption>Revisão de CLP deve cruzar programa, elétrica, sensores, atuadores, alarmes e modo real de operação.</figcaption>
+            </figure>
+
+            <h2>Sinais de que a lógica precisa ser revisada.</h2>
+            <div class="article-chart" aria-label="Matriz RBB de atenção para revisão de lógica de CLP">
+              <h3>Matriz RBB de atenção</h3>
+              <div class="chart-row">
+                <span>Forçamentos frequentes</span>
+                <div class="chart-track"><div class="chart-bar" style="width: 92%"></div></div>
+                <strong>Atenção 92</strong>
+              </div>
+              <div class="chart-row">
+                <span>Alarmes sem causa</span>
+                <div class="chart-track"><div class="chart-bar" style="width: 84%"></div></div>
+                <strong>Atenção 84</strong>
+              </div>
+              <div class="chart-row">
+                <span>Partida instável</span>
+                <div class="chart-track"><div class="chart-bar" style="width: 78%"></div></div>
+                <strong>Atenção 78</strong>
+              </div>
+              <div class="chart-row">
+                <span>Campo modificado</span>
+                <div class="chart-track"><div class="chart-bar" style="width: 70%"></div></div>
+                <strong>Atenção 70</strong>
+              </div>
+            </div>
+
+            <div class="article-split">
+              <article>
+                <h3>Revisão técnica</h3>
+                <p>
+                  Verifica blocos, permissivos, intertravamentos, alarmes, diagnósticos, modos de operação, comentários,
+                  organização de tags e coerência com o painel e a instrumentação.
+                </p>
+              </article>
+              <article>
+                <h3>Validação em campo</h3>
+                <p>
+                  Confirma entradas, saídas, sensores, atuadores, inversores, tempos, sequências e condições reais antes de
+                  considerar a lógica confiável para produção.
+                </p>
+              </article>
+            </div>
+
+            <div class="article-checklist">
+              <h2>Onde a RBB atua na revisão de CLP</h2>
+              <ul>
+                <li>Diagnóstico de CPU, módulos remotos, entradas, saídas e comunicação.</li>
+                <li>Revisão de permissivos, intertravamentos, sequências e alarmes.</li>
+                <li>Correção de lógica sem descaracterizar a operação existente.</li>
+                <li>Padronização de tags e melhoria de diagnóstico para manutenção.</li>
+                <li>Testes manuais, automáticos e validação ponto a ponto em campo.</li>
+                <li>Documentação técnica para reduzir dependência de conhecimento informal.</li>
+              </ul>
+            </div>
+
+            <div class="article-band article-band--muted">
+              <h3>Conclusão prática</h3>
+              <p>
+                A melhor hora para revisar a lógica é antes da parada crítica. Quando o CLP reflete a planta real, a operação
+                ganha previsibilidade, a manutenção ganha diagnóstico e a gestão ganha menos surpresa.
+              </p>
+            </div>
+
+            <div class="article-source">
+              <strong>Referências técnicas usadas</strong>
+              <p>
+                O conteúdo usa dados do NIST sobre manutenção e referências de padronização de programação e alarmes industriais.
+              </p>
+              <a href="https://www.nist.gov/news-events/news/2020/06/research-suggests-significant-benefits-investing-advanced-machinery" target="_blank" rel="noopener">NIST - benefícios de manutenção avançada</a>
+              <a href="https://www.plcopen.org/standards/" target="_blank" rel="noopener">PLCopen - IEC 61131-3</a>
+              <a href="https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa18" target="_blank" rel="noopener">ISA-18 - sinais e alarmes</a>
+            </div>
+          </article>
+
+          <aside class="article-sidebar reveal" aria-label="Resumo do conteúdo">
+            <div class="article-sidebar__block">
+              <span class="eyebrow">Resumo</span>
+              <h2>CLP confiável acompanha a operação real.</h2>
+              <p>Revisar lógica evita que improvisos virem padrão e que pequenas falhas terminem em parada longa.</p>
+            </div>
+            <div class="article-sidebar__block article-sidebar__block--dark">
+              <h3>Escopos relacionados</h3>
+              <ul>
+                <li>Programação de CLP</li>
+                <li>Diagnóstico de falhas</li>
+                <li>Comissionamento</li>
+                <li>Testes ponto a ponto</li>
+                <li>Alarmes e permissivos</li>
+              </ul>
+            </div>
+            <a class="btn btn-primary" href="fale-conosco.html">Revisar lógica de CLP</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-panel project-cta-panel reveal">
+            <div>
+              <span class="eyebrow">Antes da parada</span>
+              <h2>Sua lógica ainda representa a operação de hoje?</h2>
+              <p>A RBB Automação avalia CLP, painel, campo e diagnóstico para reduzir falhas recorrentes e retornos inseguros.</p>
+            </div>
+            <div class="cta-panel__actions">
+              <a class="btn btn-primary" href="fale-conosco.html">Solicitar proposta</a>
+              <a class="btn btn-secondary btn-secondary--light" href="https://wa.me/5521993860628" target="_blank" rel="noopener">Falar no WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a class="whatsapp-float" href="https://wa.me/5521993860628" target="_blank" rel="noopener" aria-label="Abrir conversa no WhatsApp">
+      <img src="assets/img/social/whatsapp-branco.png" alt="" />
+    </a>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand-block">
+          <img class="footer-logo" src="assets/img/logo/logo-footer-branco.png" alt="RBB Automação" />
+          <p>Automação industrial no Rio de Janeiro com execução técnica, leitura operacional e foco em continuidade para indústria e offshore.</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/company/rbb-automa%C3%A7%C3%A3o/about/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn da RBB Automação"><img src="assets/img/social/linkedin-branco.png" alt="" /></a>
+            <a href="https://wa.me/5521993860628" target="_blank" rel="noopener" aria-label="WhatsApp da RBB Automação"><img src="assets/img/social/whatsapp-branco.png" alt="" /></a>
+          </div>
+        </div>
+        <div>
+          <h3>Navegação</h3>
+          <ul class="footer-list">
+            <li><a href="./index.html#home">Home</a></li>
+            <li><a href="index.html#sobre">Empresa</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="treinamentos.html">Treinamentos</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contato</h3>
+          <ul class="footer-list footer-contact">
+            <li><img src="assets/img/icons/icone-contato.png" alt="" /><a href="tel:5521993860628">+55 21 99386-0628</a></li>
+            <li><img src="assets/img/icons/icone-email.png" alt="" /><a href="mailto:contato@rbbautomacao.com.br">contato@rbbautomacao.com.br</a></li>
+            <li><img src="assets/img/icons/icone-localizacao.png" alt="" /><span>Av Dr Humberto Soeiro de Carvalho, 508, Trindade, São Gonçalo - RJ</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Institucional</h3>
+          <ul class="footer-list">
+            <li><a href="fale-conosco.html">Fale Conosco</a></li>
+            <li><a href="trabalhe-aqui.html">Trabalhe Conosco</a></li>
+            <li><span>CNPJ: 63.802.688/0001-43</span></li>
+            <li><span>Atendimento comercial sob consulta</span></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
