@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Artigo da RBB Automação sobre dashboards operacionais, supervisão industrial, SCADA, KPIs e dados de campo para reduzir paradas e orientar decisões no Rio de Janeiro."
+    />
+    <meta name="keywords" content="dashboard operacional, supervisão industrial, SCADA, dados industriais, automação industrial RJ, manutenção industrial, KPI industrial" />
+    <meta name="author" content="RBB Automação" />
+    <meta name="theme-color" content="#b51212" />
+    <link rel="canonical" href="https://rbbautomacao.com.br/blog-dashboard-operacional.html" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Dashboard operacional: dado bonito não basta | RBB Automação" />
+    <meta property="og:description" content="O painel certo precisa mostrar causa, recorrência, impacto e prioridade de ação." />
+    <meta property="og:url" content="https://rbbautomacao.com.br/blog-dashboard-operacional.html" />
+    <meta property="og:image" content="https://rbbautomacao.com.br/assets/img/content/blog-dashboard-operacional-cover.png" />
+    <title>Dashboard operacional: dado bonito não basta | RBB Automação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="assets/img/logo/logo-padrao.png" />
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body class="page-internal">
+    <header class="site-header" id="topo">
+      <div class="container header-inner">
+        <div class="header-bar">
+          <a class="brand" href="./index.html#home" aria-label="Página inicial da RBB Automação"><img src="assets/img/logo/logo-topo.png" alt="RBB Automação Industrial" /></a>
+          <nav class="main-nav" id="menu-principal" aria-label="Menu principal">
+            <a href="./index.html#home">Home</a>
+            <a href="index.html#sobre">Empresa</a>
+            <a href="index.html#servicos">Serviços</a>
+            <a href="projetos.html">Projetos</a>
+            <a href="treinamentos.html">Treinamentos</a>
+            <a class="is-active" href="blog.html">Blog</a>
+            <a href="fale-conosco.html">Contato</a>
+          </nav>
+          <div class="header-actions">
+            <div class="header-social" aria-label="Redes sociais">
+              <a href="https://www.linkedin.com/company/rbb-automa%C3%A7%C3%A3o/about/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn da RBB Automação"><img src="assets/img/social/linkedin-preto.png" alt="" /></a>
+              <a href="https://wa.me/5521993860628" target="_blank" rel="noopener" aria-label="WhatsApp da RBB Automação"><img src="assets/img/social/whatsapp-preto.png" alt="" /></a>
+            </div>
+            <a class="btn btn-primary header-cta" href="fale-conosco.html">Solicitar proposta</a>
+          </div>
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="internal-hero">
+        <div class="internal-hero__media"><img src="assets/img/content/blog-dashboard-operacional-cover.png" alt="Sala de supervisão industrial com dashboards operacionais" /></div>
+        <div class="internal-hero__overlay"></div>
+        <div class="container internal-hero__content reveal">
+          <p class="section-index section-index--light">RBB BLOG</p>
+          <h1>Dashboard operacional: dado bonito não basta.</h1>
+          <p>O painel certo precisa mostrar causa, recorrência, impacto e prioridade de ação.</p>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <div class="container article-layout">
+          <article class="blog-article reveal">
+            <span class="eyebrow">Supervisão industrial</span>
+            <h2>Dashboard não é decoração. É instrumento de decisão.</h2>
+            <p>
+              Um dashboard industrial só tem valor quando encurta o caminho entre o evento de campo e a ação correta.
+              Se a tela mostra muitos gráficos, mas não responde por que a linha parou, onde a falha se repete e qual
+              perda está acontecendo, ela vira apenas uma vitrine de dados.
+            </p>
+            <p>
+              Para operações industriais, utilidades e offshore no Rio de Janeiro, o painel precisa nascer da rotina real:
+              manutenção quer causa provável, produção quer impacto, operação quer estado claro do processo e gestão quer
+              tendência confiável. O desafio é organizar tudo sem criar ruído.
+            </p>
+
+            <div class="article-metrics">
+              <div class="article-metric">
+                <strong>US$119,1 bi</strong>
+                <span>Perdas evitáveis</span>
+                <p>Estimativa do NIST para perdas anuais por problemas evitáveis de manutenção em produção discreta nos EUA, em 2016.</p>
+              </div>
+              <div class="article-metric">
+                <strong>3,3x</strong>
+                <span>Mais downtime</span>
+                <p>Estabelecimentos mais dependentes de manutenção reativa foram associados a muito mais tempo parado no estudo do NIST.</p>
+              </div>
+              <div class="article-metric">
+                <strong>15%</strong>
+                <span>Menos downtime</span>
+                <p>Entre plantas com baixa manutenção reativa, mais manutenção preditiva foi associada a menor tempo de parada.</p>
+              </div>
+            </div>
+
+            <div class="article-band article-band--dark">
+              <h3>A leitura que convence o cliente não é “temos dashboard”. É “sabemos onde a operação perde tempo”.</h3>
+              <p>
+                O painel precisa transformar alarme, estado de máquina, parada, ciclo, lote e intervenção em uma leitura
+                objetiva. Quando isso acontece, a conversa deixa de ser opinião e passa a ser evidência operacional.
+              </p>
+            </div>
+
+            <figure class="article-figure">
+              <img src="assets/img/content/blog-dashboard-operacional-cover.png" alt="Dashboard operacional com indicadores industriais e tendências" loading="lazy" />
+              <figcaption>Dashboard efetivo mostra contexto: equipamento, estado, evento, recorrência e impacto para a operação.</figcaption>
+            </figure>
+
+            <h2>O que um dashboard precisa responder em poucos segundos.</h2>
+            <div class="article-chart" aria-label="Matriz RBB para prioridade de dashboard operacional">
+              <h3>Matriz RBB de prioridade visual</h3>
+              <div class="chart-row">
+                <span>Causa da parada</span>
+                <div class="chart-track"><div class="chart-bar" style="width: 94%"></div></div>
+                <strong>Prioridade 94</strong>
+              </div>
+              <div class="chart-row">
+                <span>Recorrência</span>
+                <div class="chart-track"><div class="chart-bar" style="width: 82%"></div></div>
+                <strong>Prioridade 82</strong>
+              </div>
+              <div class="chart-row">
+                <span>Impacto no processo</span>
+                <div class="chart-track"><div class="chart-bar" style="width: 76%"></div></div>
+                <strong>Prioridade 76</strong>
+              </div>
+              <div class="chart-row">
+                <span>Ação recomendada</span>
+                <div class="chart-track"><div class="chart-bar" style="width: 68%"></div></div>
+                <strong>Prioridade 68</strong>
+              </div>
+            </div>
+
+            <div class="article-split">
+              <article>
+                <h3>O erro comum</h3>
+                <p>
+                  Começar pela estética da tela antes de validar tags, estados, alarmes e eventos. O resultado é visual bonito,
+                  mas incapaz de sustentar investigação técnica quando a planta para.
+                </p>
+              </article>
+              <article>
+                <h3>O caminho correto</h3>
+                <p>
+                  Definir perguntas operacionais, validar sinais no CLP/SCADA, padronizar eventos e só depois construir a camada
+                  visual com indicadores que orientam decisão.
+                </p>
+              </article>
+            </div>
+
+            <div class="article-checklist">
+              <h2>Indicadores que costumam gerar ação real</h2>
+              <ul>
+                <li>Disponibilidade por equipamento, linha, turno ou área.</li>
+                <li>Tempo de parada com causa provável e recorrência.</li>
+                <li>Alarmes por frequência, duração, prioridade e estado operacional.</li>
+                <li>Estados de máquina: automático, manual, falha, espera, bloqueio e manutenção.</li>
+                <li>Tendências de variáveis críticas para antecipar degradação.</li>
+                <li>Integração entre CLP, IHM, SCADA, banco de dados e relatórios gerenciais.</li>
+              </ul>
+            </div>
+
+            <div class="article-band article-band--muted">
+              <h3>Conclusão prática</h3>
+              <p>
+                O dashboard certo não tenta mostrar tudo. Ele mostra o que muda a próxima decisão. Para a RBB Automação,
+                supervisão industrial eficiente é aquela que reduz dúvida, prioriza intervenção e transforma dado de campo
+                em continuidade operacional.
+              </p>
+            </div>
+
+            <div class="article-source">
+              <strong>Referências técnicas usadas</strong>
+              <p>
+                Números de manutenção foram contextualizados a partir de publicações do NIST. A estrutura de KPIs e integração
+                foi apoiada por referências ISO 22400 e ISA-95.
+              </p>
+              <a href="https://www.nist.gov/node/1606316" target="_blank" rel="noopener">NIST - Manufacturing Machinery Maintenance</a>
+              <a href="https://www.iso.org/standard/56847.html" target="_blank" rel="noopener">ISO 22400 - KPIs para operações de produção</a>
+              <a href="https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa95" target="_blank" rel="noopener">ISA-95 - Integração empresa-controle</a>
+            </div>
+          </article>
+
+          <aside class="article-sidebar reveal" aria-label="Resumo do conteúdo">
+            <div class="article-sidebar__block">
+              <span class="eyebrow">Resumo</span>
+              <h2>Dashboard precisa orientar a próxima ação.</h2>
+              <p>O valor está em transformar sinal de campo em causa, prioridade, recorrência e impacto operacional.</p>
+            </div>
+            <div class="article-sidebar__block article-sidebar__block--dark">
+              <h3>Escopos relacionados</h3>
+              <ul>
+                <li>SCADA e supervisórios</li>
+                <li>Dashboards industriais</li>
+                <li>Integração de dados</li>
+                <li>Alarmes e eventos</li>
+                <li>KPIs operacionais</li>
+              </ul>
+            </div>
+            <a class="btn btn-primary" href="fale-conosco.html">Avaliar meu processo</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-panel project-cta-panel reveal">
+            <div>
+              <span class="eyebrow">Supervisão com leitura de campo</span>
+              <h2>Seu dashboard mostra dado ou ajuda a decidir?</h2>
+              <p>Fale com a RBB Automação para revisar supervisório, alarmes, indicadores e integração de dados industriais.</p>
+            </div>
+            <div class="cta-panel__actions">
+              <a class="btn btn-primary" href="fale-conosco.html">Solicitar proposta</a>
+              <a class="btn btn-secondary btn-secondary--light" href="https://wa.me/5521993860628" target="_blank" rel="noopener">Falar no WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a class="whatsapp-float" href="https://wa.me/5521993860628" target="_blank" rel="noopener" aria-label="Abrir conversa no WhatsApp">
+      <img src="assets/img/social/whatsapp-branco.png" alt="" />
+    </a>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand-block">
+          <img class="footer-logo" src="assets/img/logo/logo-footer-branco.png" alt="RBB Automação" />
+          <p>Automação industrial no Rio de Janeiro com execução técnica, leitura operacional e foco em continuidade para indústria e offshore.</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/company/rbb-automa%C3%A7%C3%A3o/about/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn da RBB Automação"><img src="assets/img/social/linkedin-branco.png" alt="" /></a>
+            <a href="https://wa.me/5521993860628" target="_blank" rel="noopener" aria-label="WhatsApp da RBB Automação"><img src="assets/img/social/whatsapp-branco.png" alt="" /></a>
+          </div>
+        </div>
+        <div>
+          <h3>Navegação</h3>
+          <ul class="footer-list">
+            <li><a href="./index.html#home">Home</a></li>
+            <li><a href="index.html#sobre">Empresa</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="treinamentos.html">Treinamentos</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contato</h3>
+          <ul class="footer-list footer-contact">
+            <li><img src="assets/img/icons/icone-contato.png" alt="" /><a href="tel:5521993860628">+55 21 99386-0628</a></li>
+            <li><img src="assets/img/icons/icone-email.png" alt="" /><a href="mailto:contato@rbbautomacao.com.br">contato@rbbautomacao.com.br</a></li>
+            <li><img src="assets/img/icons/icone-localizacao.png" alt="" /><span>Av Dr Humberto Soeiro de Carvalho, 508, Trindade, São Gonçalo - RJ</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Institucional</h3>
+          <ul class="footer-list">
+            <li><a href="fale-conosco.html">Fale Conosco</a></li>
+            <li><a href="trabalhe-aqui.html">Trabalhe Conosco</a></li>
+            <li><span>CNPJ: 63.802.688/0001-43</span></li>
+            <li><span>Atendimento comercial sob consulta</span></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
