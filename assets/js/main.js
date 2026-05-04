@@ -72,19 +72,29 @@ const pageSections = [...sectionLinks]
   .map((link) => document.querySelector(link.getAttribute('href')))
   .filter(Boolean);
 
-if (sectionLinks.length && pageSections.length && 'IntersectionObserver' in window) {
+if (sectionLinks.length && pageSections.length) {
   const navMap = new Map([...sectionLinks].map((link) => [link.getAttribute('href'), link]));
+  const updateActiveSection = () => {
+    const headerOffset = siteHeader ? siteHeader.offsetHeight + 24 : 120;
+    const currentPosition = window.scrollY + headerOffset;
 
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const currentId = `#${entry.target.id}`;
-      navMap.forEach((link) => link.classList.remove('is-active'));
-      navMap.get(currentId)?.classList.add('is-active');
+    let activeSection = pageSections[0];
+
+    pageSections.forEach((section) => {
+      if (section.offsetTop <= currentPosition) {
+        activeSection = section;
+      }
     });
-  }, { threshold: 0.45 });
 
-  pageSections.forEach((section) => sectionObserver.observe(section));
+    navMap.forEach((link) => link.classList.remove('is-active'));
+    navMap.get(`#${activeSection.id}`)?.classList.add('is-active');
+  };
+
+  window.addEventListener('scroll', updateActiveSection, { passive: true });
+  window.addEventListener('resize', updateActiveSection);
+  window.addEventListener('load', updateActiveSection);
+  window.addEventListener('hashchange', updateActiveSection);
+  updateActiveSection();
 }
 
 if (!document.querySelector('.whatsapp-float')) {
