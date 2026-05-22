@@ -435,6 +435,7 @@
 }
 
 .field-error {
+  display: block;
   color: #8e1212;
   font-size: 0.85rem;
 }

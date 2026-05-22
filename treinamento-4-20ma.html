@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Treinamento técnico da RBB Automação sobre análise de sinal 4-20mA: fundamentos do laço de corrente, diagnóstico, cálculo de variável de processo e falhas típicas em campo." />
+    <meta name="keywords" content="treinamento 4-20mA, sinal analógico industrial, laço de corrente, instrumentação industrial, diagnóstico de sinal, transmissor, automação industrial RJ" />
+    <meta name="author" content="RBB Automação" />
+    <meta name="theme-color" content="#b51212" />
+    <meta name="robots" content="index, follow, max-snippet:160, max-image-preview:large" />
+    <link rel="canonical" href="https://rbbautomacao.com.br/treinamento-4-20ma.html" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Treinamento: Análise de Sinal 4-20mA | RBB Automação" />
+    <meta property="og:description" content="Entenda o laço de corrente 4-20mA da teoria ao diagnóstico em campo: cálculo, topologia, falhas e uso do multímetro." />
+    <meta property="og:url" content="https://rbbautomacao.com.br/treinamento-4-20ma.html" />
+    <title>Treinamento: Análise de Sinal 4-20mA | RBB Automação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="assets/img/logo/logo-padrao.png" />
+    <link rel="preload" as="image" href="assets/img/services/service-treinamentos-realista.jpg" fetchpriority="high" />
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Análise de Sinal 4-20mA",
+      "description": "Treinamento técnico sobre fundamentos do laço de corrente 4-20mA, diagnóstico, cálculo de variável de processo e identificação de falhas em campo.",
+      "provider": {
+        "@type": "Organization",
+        "name": "RBB Automação",
+        "url": "https://rbbautomacao.com.br"
+      },
+      "url": "https://rbbautomacao.com.br/treinamento-4-20ma.html",
+      "educationalLevel": "Técnico",
+      "inLanguage": "pt-BR"
+    }
+    </script>
+  </head>
+  <body class="page-internal">
+    <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo</a>
+    <header class="site-header" id="topo">
+      <div class="container header-inner">
+        <div class="header-bar">
+          <a class="brand" href="./index.html#home" aria-label="Página inicial da RBB Automação"><img src="assets/img/logo/logo-topo.png" alt="RBB Automação Industrial" /></a>
+          <nav class="main-nav" id="menu-principal" aria-label="Menu principal">
+            <a href="./index.html#home">Home</a>
+            <a href="index.html#sobre">Empresa</a>
+            <a href="index.html#servicos">Serviços</a>
+            <a href="projetos.html">Projetos</a>
+            <a class="is-active" href="treinamentos.html">Treinamentos</a>
+            <a href="blog.html">Blog</a>
+            <a href="fale-conosco.html">Contato</a>
+          </nav>
+          <div class="header-actions">
+            <div class="header-social" aria-label="Redes sociais">
+              <a href="https://www.linkedin.com/company/rbb-automa%C3%A7%C3%A3o/about/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn da RBB Automação"><img src="assets/img/social/linkedin-preto.png" alt="" /></a>
+              <a href="https://wa.me/5521993860628" target="_blank" rel="noopener" aria-label="WhatsApp da RBB Automação"><img src="assets/img/social/whatsapp-preto.png" alt="" /></a>
+            </div>
+            <a class="btn btn-primary header-cta" href="fale-conosco.html">Solicitar proposta</a>
+          </div>
+          <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="conteudo-principal">
+      <section class="internal-hero">
+        <div class="internal-hero__media"><img src="assets/img/services/service-treinamentos-realista.jpg" alt="Técnico analisando sinal 4-20mA em painel de instrumentação industrial" /></div>
+        <div class="internal-hero__overlay"></div>
+        <div class="container internal-hero__content reveal">
+          <p class="section-index section-index--light">RBB TREINAMENTOS</p>
+          <h1>Análise de sinal 4-20mA.</h1>
+          <p>Laço de corrente, diagnóstico com multímetro, cálculo de variável de processo e identificação de falhas em campo.</p>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <div class="container article-layout">
+          <article class="blog-article reveal">
+            <span class="eyebrow">Instrumentação industrial</span>
+            <h2>O sinal mais usado na instrumentação industrial ainda gera dúvida em campo.</h2>
+            <p>
+              O laço de corrente 4-20mA é o padrão analógico mais aplicado em plantas industriais. Transmissores de pressão,
+              temperatura, nível, vazão e posição usam esse sinal para comunicar a variável medida até o controlador.
+              Mesmo sendo amplamente utilizado, o diagnóstico em campo ainda gera dúvidas na hora de medir, interpretar e
+              identificar a causa de um sinal fora de faixa.
+            </p>
+            <p>
+              Este treinamento cobre o que é necessário para ler, calcular e diagnosticar o sinal 4-20mA com multímetro,
+              calibrador e HART, entender a topologia do laço, identificar falhas típicas e atuar com segurança no circuito.
+            </p>
+
+            <div class="article-metrics">
+              <div class="article-metric">
+                <strong>IEC 60381-1</strong>
+                <span>Norma de referência</span>
+                <p>Padrão internacional para sinais de transmissão analógica em corrente contínua em instrumentação industrial.</p>
+              </div>
+              <div class="article-metric">
+                <strong>16 mA</strong>
+                <span>Span efetivo</span>
+                <p>De 4mA (0%) a 20mA (100%): o span útil é sempre 16mA, independente da variável medida.</p>
+              </div>
+              <div class="article-metric">
+                <strong>4 mA</strong>
+                <span>Live zero</span>
+                <p>O zero vivo de 4mA permite detectar cabo partido (0mA = falha), diferenciando de um transmissor em fundo de escala.</p>
+              </div>
+            </div>
+
+            <div class="article-band article-band--dark">
+              <h3>4mA não significa zero. Significa que o processo está no início da faixa e o laço está íntegro.</h3>
+              <p>
+                Essa é a diferença fundamental entre o sinal 4-20mA e um sinal de tensão 0-10V: o "zero vivo" permite
+                distinguir entre uma leitura de processo em 0% e uma falha de circuito. Quem não entende isso interpreta
+                mal o alarme.
+              </p>
+            </div>
+
+            <figure class="article-figure">
+              <img src="assets/img/services/service-plc-realista.jpg" alt="Técnico medindo sinal 4-20mA com multímetro em painel de instrumentação" loading="lazy" />
+              <figcaption>A medição correta do sinal 4-20mA exige inserção em série no laço — não em paralelo como tensão.</figcaption>
+            </figure>
+
+            <h2>O que este treinamento cobre.</h2>
+
+            <div class="article-steps">
+              <div>
+                <span>01</span>
+                <h3>Fundamentos do laço de corrente</h3>
+                <p>Por que corrente e não tensão. Imunidade a ruído, queda resistiva em cabo, topologia 2 fios (loop powered) e 4 fios (self-powered). Alimentação de 24VCC e papel da fonte no laço.</p>
+              </div>
+              <div>
+                <span>02</span>
+                <h3>Cálculo da variável de processo</h3>
+                <p>Fórmula PV% = (I − 4) ÷ 16 × 100. Como aplicar o span e o offset para obter o valor em unidade de engenharia (°C, bar, m, m³/h). Exemplos práticos com diferentes transmissores.</p>
+              </div>
+              <div>
+                <span>03</span>
+                <h3>Resistor de shunt e leitura por tensão</h3>
+                <p>Como usar 250Ω para converter o sinal em tensão (1–5V) no controlador. Quando usar 500Ω. Como medir a tensão no shunt e converter de volta para mA e depois para a variável de processo.</p>
+              </div>
+              <div>
+                <span>04</span>
+                <h3>Diagnóstico com multímetro</h3>
+                <p>Medição em série (mA) versus medição em paralelo (tensão no shunt). Configuração correta do multímetro. Como entrar no laço sem interromper o processo. Procedimento seguro de inserção e retirada.</p>
+              </div>
+              <div>
+                <span>05</span>
+                <h3>Faixas de alarme e falhas típicas</h3>
+                <p>Mapeamento das faixas: abaixo de 3,6mA = cabo partido. 3,6–4mA = below range. 4–20mA = faixa operacional. 20–21mA = above range. Acima de 21mA = falha de hardware. O que cada faixa indica sobre o estado do laço.</p>
+              </div>
+              <div>
+                <span>06</span>
+                <h3>Calibrador de laço e HART</h3>
+                <p>Como simular o transmissor com calibrador de laço para testar o controlador. Fundamentos do protocolo HART sobreposto ao 4-20mA. Leitura de variáveis digitais sem interromper o sinal analógico.</p>
+              </div>
+            </div>
+
+            <div class="article-chart" aria-label="Mapeamento de faixas do sinal 4-20mA">
+              <h3>Mapeamento de faixas do sinal 4-20mA</h3>
+              <div class="chart-row">
+                <span>Faixa operacional (4–20 mA)</span>
+                <div class="chart-track"><div class="chart-bar" style="width: 100%"></div></div>
+                <strong>Normal</strong>
+              </div>
+              <div class="chart-row">
+                <span>Above range (20–21 mA)</span>
+                <div class="chart-track"><div class="chart-bar" style="width: 52%"></div></div>
+                <strong>Alarme alto</strong>
+              </div>
+              <div class="chart-row">
+                <span>Below range (3,6–4 mA)</span>
+                <div class="chart-track"><div class="chart-bar" style="width: 40%"></div></div>
+                <strong>Alarme baixo</strong>
+              </div>
+              <div class="chart-row">
+                <span>Cabo partido / sem alimentação (&lt;3,6 mA)</span>
+                <div class="chart-track"><div class="chart-bar" style="width: 18%"></div></div>
+                <strong>Falha de laço</strong>
+              </div>
+            </div>
+
+            <div class="article-split">
+              <article>
+                <h3>Erros mais comuns em campo</h3>
+                <p>
+                  Medir o sinal em paralelo (como tensão) em vez de inserir em série. Confundir 4mA com "zero de processo".
+                  Não considerar a resistência do cabo no cálculo da carga total do laço. Ler 0mA como fundo de escala
+                  em vez de falha de circuito.
+                </p>
+              </article>
+              <article>
+                <h3>O que muda na prática</h3>
+                <p>
+                  Diagnóstico mais rápido sem abrir painéis desnecessariamente. Capacidade de distinguir falha de
+                  transmissor, cabo, fonte ou receptor. Confiança para simular sinal no laço e verificar a reação
+                  do controlador antes de liberar o equipamento.
+                </p>
+              </article>
+            </div>
+
+            <div class="article-checklist">
+              <h2>O que você será capaz de fazer ao final do treinamento</h2>
+              <ul>
+                <li>Identificar a topologia do laço (2 fios e 4 fios) e localizar cada componente no circuito.</li>
+                <li>Calcular o valor de processo a partir da corrente medida, aplicando span e offset.</li>
+                <li>Medir o sinal com multímetro em modo corrente (série) e interpretar o resultado.</li>
+                <li>Medir tensão no resistor de shunt e converter para mA e para a variável de processo.</li>
+                <li>Identificar a causa de um sinal fora de faixa (cabo, transmissor, fonte, receptor).</li>
+                <li>Usar calibrador de laço para simular transmissor e testar a reação do controlador.</li>
+                <li>Interpretar comunicação HART sem interromper o sinal analógico do laço.</li>
+              </ul>
+            </div>
+
+            <div class="article-band article-band--muted">
+              <h3>Público-alvo</h3>
+              <p>
+                Técnicos de instrumentação, elétrica, automação e operação que trabalham com transmissores de campo,
+                painéis de controle e sistemas supervisórios. Não é exigido conhecimento prévio de instrumentação —
+                apenas familiaridade com multímetro e circuitos de corrente contínua.
+              </p>
+            </div>
+
+            <div class="article-source">
+              <strong>Referências técnicas</strong>
+              <p>O conteúdo é baseado em normas técnicas e práticas consolidadas de instrumentação industrial.</p>
+              <a href="https://www.iec.ch/homepage" target="_blank" rel="noopener">IEC 60381-1 — Sinais analógicos para sistemas de controle de processo</a>
+              <a href="https://www.isa.org/standards-and-publications/isa-standards/isa-standards-committees/isa5-1" target="_blank" rel="noopener">ISA-5.1 — Instrumentação: símbolos e identificação</a>
+              <a href="https://fieldcommgroup.org/technologies/hart" target="_blank" rel="noopener">FieldComm Group — Protocolo HART</a>
+            </div>
+          </article>
+
+          <aside class="article-sidebar reveal" aria-label="Informações do treinamento">
+            <div class="article-sidebar__block">
+              <span class="eyebrow">Resumo</span>
+              <h2>Do fundamento ao diagnóstico em campo.</h2>
+              <p>Teoria do laço de corrente, cálculo de variável de processo, medição com multímetro e identificação de falhas.</p>
+            </div>
+            <div class="article-sidebar__block article-sidebar__block--dark">
+              <h3>Módulos</h3>
+              <ul>
+                <li>Fundamentos do laço de corrente</li>
+                <li>Cálculo de variável de processo</li>
+                <li>Resistor de shunt e leitura por tensão</li>
+                <li>Diagnóstico com multímetro</li>
+                <li>Faixas de alarme e falhas típicas</li>
+                <li>Calibrador de laço e HART</li>
+              </ul>
+            </div>
+            <div class="article-sidebar__block">
+              <h3>Formato</h3>
+              <ul>
+                <li>Presencial ou on-site (na planta)</li>
+                <li>Exercícios práticos com bancada</li>
+                <li>Material de apoio incluso</li>
+              </ul>
+            </div>
+            <a class="btn btn-primary" href="fale-conosco.html">Solicitar treinamento</a>
+            <a class="btn btn-secondary" href="treinamentos.html">Ver todos os treinamentos</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-panel project-cta-panel reveal">
+            <div>
+              <span class="eyebrow">Capacitação técnica</span>
+              <h2>Sua equipe domina o sinal 4-20mA em campo?</h2>
+              <p>A RBB Automação oferece treinamentos presenciais e on-site focados em aplicação prática para equipes de operação, manutenção e instrumentação.</p>
+            </div>
+            <div class="cta-panel__actions">
+              <a class="btn btn-primary" href="fale-conosco.html">Solicitar treinamento</a>
+              <a class="btn btn-secondary btn-secondary--light" href="https://wa.me/5521993860628" target="_blank" rel="noopener">Falar no WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a class="whatsapp-float" href="https://wa.me/5521993860628" target="_blank" rel="noopener" aria-label="Abrir conversa no WhatsApp">
+      <img src="assets/img/social/whatsapp-branco.png" alt="" />
+    </a>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand-block">
+          <img class="footer-logo" src="assets/img/logo/logo-footer-branco.png" alt="RBB Automação" />
+          <p>Automação industrial com execução técnica, leitura operacional e foco em continuidade.</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/company/rbb-automa%C3%A7%C3%A3o/about/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn da RBB Automação"><img src="assets/img/social/linkedin-branco.png" alt="" /></a>
+            <a href="https://wa.me/5521993860628" target="_blank" rel="noopener" aria-label="WhatsApp da RBB Automação"><img src="assets/img/social/whatsapp-branco.png" alt="" /></a>
+          </div>
+        </div>
+        <div>
+          <h3>Navegação</h3>
+          <ul class="footer-list">
+            <li><a href="./index.html#home">Home</a></li>
+            <li><a href="index.html#sobre">Empresa</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="treinamentos.html">Treinamentos</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contato</h3>
+          <ul class="footer-list footer-contact">
+            <li><img src="assets/img/icons/icone-contato.png" alt="" /><a href="tel:5521993860628">+55 21 99386-0628</a></li>
+            <li><img src="assets/img/icons/icone-email.png" alt="" /><a href="mailto:contato@rbbautomacao.com.br">contato@rbbautomacao.com.br</a></li>
+            <li><img src="assets/img/icons/icone-localizacao.png" alt="" /><span>Av Dr Humberto Soeiro de Carvalho, 508, Trindade, São Gonçalo - RJ</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Institucional</h3>
+          <ul class="footer-list">
+            <li><a href="fale-conosco.html">Fale Conosco</a></li>
+            <li><a href="trabalhe-aqui.html">Trabalhe Conosco</a></li>
+            <li><span>Atendimento comercial sob consulta</span></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

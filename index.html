@@ -13,6 +13,7 @@
     />
     <meta name="author" content="RBB Automação" />
     <meta name="theme-color" content="#b51212" />
+    <meta name="robots" content="index, follow, max-snippet:160, max-image-preview:large" />
     <link rel="canonical" href="https://rbbautomacao.com.br/" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:type" content="website" />
@@ -44,12 +45,58 @@
       rel="stylesheet"
     />
     <link rel="icon" type="image/png" href="assets/img/logo/logo-padrao.png" />
+    <link rel="preload" as="image" href="assets/img/services/service-paineis-realista.jpg" fetchpriority="high" />
     <link rel="stylesheet" href="assets/css/global.css" />
     <link rel="stylesheet" href="assets/css/components.css" />
     <link rel="stylesheet" href="assets/css/pages.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "name": "RBB Automação Industrial",
+          "description": "Automação industrial no Rio de Janeiro com retrofit, painéis elétricos, programação de CLP, IHM, supervisório SCADA e comissionamento para indústria e offshore.",
+          "url": "https://rbbautomacao.com.br",
+          "telephone": "+5521993860628",
+          "email": "contato@rbbautomacao.com.br",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av Dr Humberto Soeiro de Carvalho, 508",
+            "addressLocality": "São Gonçalo",
+            "addressRegion": "RJ",
+            "addressCountry": "BR"
+          },
+          "areaServed": ["Rio de Janeiro", "RJ"],
+          "sameAs": [
+            "https://www.linkedin.com/company/rbb-automa%C3%A7%C3%A3o/about/?viewAsMember=true"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Serviços de Automação Industrial",
+            "itemListElement": [
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Programação de PLC e CLP"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Indústria 4.0 e Conectividade Industrial"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Montagem e Manutenção de Painéis Elétricos"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Desenvolvimento de IHM e Supervisório SCADA"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Parametrização de Drives e Servos Drives"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Treinamentos de Automação Industrial"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Retrofit de Máquinas e Sistemas Industriais"}}
+            ]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "name": "RBB Automação",
+          "url": "https://rbbautomacao.com.br"
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="page-home">
+    <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo</a>
     <header class="site-header" id="topo">
       <div class="container header-inner">
         <div class="header-bar">
@@ -100,7 +147,7 @@
         </div>
       </div>
     </header>
-    <main>
+    <main id="conteudo-principal">
       <section class="hero-banner" id="home" aria-label="Banner principal">
         <div class="hero-banner__content">
           <div class="container hero-banner__inner reveal">
@@ -112,7 +159,30 @@
               <a class="btn btn-primary" href="fale-conosco.html">Solicitar proposta</a>
               <a class="btn btn-secondary btn-secondary--light" href="https://wa.me/5521993860628" target="_blank" rel="noopener">Falar no WhatsApp</a>
             </div>
+            <div class="hero-tags" aria-label="Áreas de atuação">
+              <span>Automação Industrial</span>
+              <span>Automação Elétrica e Instrumentação</span>
+              <span>Indústria e Offshore · RJ</span>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <section class="partners-section" aria-label="Marcas que trabalhamos">
+        <div class="container partners-inner">
+          <div class="partners-title">
+            <span class="section-index">Parceiros</span>
+            <h2>Fornecedores</h2>
+            <p class="partners-title__sub">Marcas que aplicamos em projetos industriais e offshore.</p>
+          </div>
+          <ul class="partners-row">
+            <li><img class="partner-logo" src="assets/img/brands/siemens.svg" alt="Siemens" loading="lazy" /></li>
+            <li><img class="partner-logo" src="assets/img/brands/allen-bradley.svg" alt="Allen-Bradley / Rockwell Automation" loading="lazy" /></li>
+            <li><img class="partner-logo" src="assets/img/brands/schneider.png" alt="Schneider Electric" loading="lazy" /></li>
+            <li><img class="partner-logo" src="assets/img/brands/weg.png" alt="WEG" loading="lazy" /></li>
+            <li><img class="partner-logo" src="assets/img/brands/abb.svg" alt="ABB" loading="lazy" /></li>
+            <li><img class="partner-logo" src="assets/img/brands/delta.png" alt="Delta" loading="lazy" /></li>
+          </ul>
         </div>
       </section>
 
@@ -120,10 +190,11 @@
           <div class="container about-grid about-grid--wide">
             <div class="about-copy reveal">
               <div class="about-heading">
+                <span class="section-index section-index--light">Sobre a empresa</span>
                 <h2>Quem somos</h2>
               </div>
               <p>
-                A RBB Automação atua no Rio de Janeiro com modernização, integração e suporte técnico para sistemas industriais, conectando elétrica, automação e operação em escopos pensados para a rotina real da planta e para ambientes com exigência de campo.
+                A RBB Automação atua no Rio de Janeiro com modernização, integração e suporte técnico para sistemas industriais, conectando automação elétrica, instrumentação e operação em escopos pensados para a rotina real da planta e para ambientes com exigência de campo.
               </p>
               <p>
                 Nossa entrega combina leitura operacional, clareza técnica e execução em campo para reduzir falhas, recuperar confiabilidade e sustentar resultado depois da partida, tanto em indústria quanto em aplicações offshore.
@@ -139,11 +210,11 @@
         <div class="container">
           <div class="services-header reveal">
             <div class="section-heading section-heading-inline">
+              <span class="section-index">Serviços</span>
               <h2>Soluções diretas para aplicação industrial e offshore.</h2>
             </div>
             <p>
-              Estruturamos o escopo conforme a necessidade real do processo, da
-              interface de operação e das condições de campo, com atuação orientada para plantas industriais, utilidades, integração de sistemas e demandas offshore no Rio de Janeiro.
+              Estruturamos o escopo conforme a necessidade real do processo, instrumentação de campo, interface de operação e condições de planta, com atuação orientada para indústria, utilidades, integração de sistemas e demandas offshore no Rio de Janeiro.
             </p>
           </div>
           <div class="services-grid services-grid--compact">
@@ -194,6 +265,46 @@
               <div class="service-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 24l20-8 20 8-20 8z"/><path d="M20 32v8M32 32v8M44 32v8M14 46h36"/><path d="M22 46c0-4 4-7 10-7s10 3 10 7"/></g></svg></div>
               <h3>Treinamentos de Automação Industrial</h3>
               <p>Capacitação técnica para equipes de operação, manutenção e elétrica com foco em aplicação prática e leitura operacional do processo.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="why-rbb-section" aria-labelledby="why-rbb-heading">
+        <div class="container">
+          <div class="why-rbb-header reveal">
+            <span class="section-index">Por que a RBB</span>
+            <h2 id="why-rbb-heading">Resultado começa na execução de campo.</h2>
+            <p>Entregamos com o processo rodando. Cada escopo parte da leitura real da planta, não de uma proposta genérica.</p>
+          </div>
+          <div class="why-rbb-grid">
+            <article class="why-card reveal">
+              <div class="why-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="12" y="18" width="16" height="28"/><rect x="36" y="18" width="16" height="28"/><path d="M28 32h8M20 26h8M20 38h8M36 26h8M36 38h8"/></svg>
+              </div>
+              <h3>Automação elétrica e instrumentação no mesmo escopo</h3>
+              <p>Projeto elétrico, instrumentação de campo, montagem de painel, programação de CLP e comissionamento sob responsabilidade técnica única, sem terceirização de etapas críticas.</p>
+            </article>
+            <article class="why-card reveal">
+              <div class="why-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="32" cy="32" r="16"/><circle cx="32" cy="32" r="6"/><path d="M32 8v8M32 48v8M8 32h8M48 32h8"/></svg>
+              </div>
+              <h3>Leitura operacional real</h3>
+              <p>Soluções desenvolvidas com atenção às condições de campo e à rotina do operador. Funciona na planta, não só na documentação.</p>
+            </article>
+            <article class="why-card reveal">
+              <div class="why-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="32" cy="32" r="9"/><path d="M32 11v8M32 45v8M11 32h8M45 32h8M17 17l6 6M41 41l6 6M47 17l-6 6M23 41l-6 6"/></svg>
+              </div>
+              <h3>Escopo ajustado à planta</h3>
+              <p>Análise técnica antes da proposta. Cada instalação tem restrições próprias que definem a solução mais segura, eficiente e sustentável.</p>
+            </article>
+            <article class="why-card reveal">
+              <div class="why-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M32 10c-9.4 0-16 7.6-16 17 0 12.5 16 27 16 27s16-14.5 16-27c0-9.4-6.6-17-16-17z"/><circle cx="32" cy="27" r="5"/></svg>
+              </div>
+              <h3>Base no RJ com atuação offshore</h3>
+              <p>Estrutura para plantas industriais no Rio de Janeiro e capacidade de atendimento em projetos offshore e operações com exigência de campo.</p>
             </article>
           </div>
         </div>
@@ -329,6 +440,14 @@
       </div>
     </footer>
     <script src="assets/js/main.js"></script>
+    <script type="speculationrules">
+    {
+      "prerender": [{
+        "where": { "href_matches": "/*.html" },
+        "eagerness": "moderate"
+      }]
+    }
+    </script>
   </body>
 </html>
 
