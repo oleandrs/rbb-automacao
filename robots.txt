@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /smtp-config.local.php
+Disallow: /smtp-config.local.example.php
+Disallow: /obrigado.html
+
+Sitemap: https://rbbautomacao.com.br/sitemap.xml

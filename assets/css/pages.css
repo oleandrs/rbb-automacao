@@ -50,7 +50,8 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+  padding: clamp(4rem, 9vw, 7rem) 0;
+  gap: 1.6rem;
 }
 
 .hero-banner__inner.reveal {
@@ -59,17 +60,20 @@
 }
 
 .hero-banner__inner h1 {
-  max-width: min(16ch, 100%);
-  font-size: clamp(3.2rem, 6vw, 6.2rem);
-  line-height: 0.94;
+  max-width: min(22ch, 100%);
+  font-size: clamp(2.4rem, 4.2vw, 4.4rem);
+  line-height: 1.05;
   text-transform: uppercase;
-  margin: 0.8rem 0 1rem;
+  margin: 0;
+  letter-spacing: -0.005em;
 }
 
 .hero-banner__inner p:not(.section-index) {
   max-width: 58ch;
   color: rgba(255, 255, 255, 0.82);
   font-size: 1.08rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .hero-actions {
@@ -77,7 +81,29 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 0.8rem;
-  margin-top: 1.5rem;
+  margin-top: 0.8rem;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+}
+
+.hero-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .about-section,
@@ -161,6 +187,7 @@
   line-height: 0.95;
   margin-top: 0.7rem;
   text-transform: uppercase;
+  letter-spacing: -0.01em;
 }
 
 .section-heading-inline {
@@ -195,6 +222,7 @@
   line-height: 0.95;
   margin: 0;
   text-transform: none;
+  letter-spacing: -0.01em;
 }
 
 .about-brand {
@@ -1549,4 +1577,225 @@
 .status-card.is-error .maintenance-badge {
   background: rgba(128, 16, 16, 0.1);
   color: #8b1111;
+}
+
+/* ─── Por que a RBB ────────────────────────────────────── */
+.why-rbb-section {
+  padding: 5.5rem 0;
+  background:
+    linear-gradient(90deg, rgba(17, 17, 17, 0.028) 1px, transparent 1px),
+    linear-gradient(rgba(17, 17, 17, 0.028) 1px, transparent 1px),
+    linear-gradient(180deg, #ffffff 0%, #f4f4f2 100%);
+  background-size: 44px 44px, 44px 44px, auto;
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.why-rbb-header {
+  display: grid;
+  gap: 0.85rem;
+  margin-bottom: 2.5rem;
+}
+
+.why-rbb-header h2 {
+  font-size: clamp(2.2rem, 3.5vw, 3.4rem);
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 0.4rem 0 0;
+  letter-spacing: -0.01em;
+}
+
+.why-rbb-header p {
+  font-size: 1.05rem;
+  color: var(--text-soft);
+  line-height: 1.65;
+  max-width: 52ch;
+  margin: 0;
+}
+
+.why-rbb-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.why-card {
+  display: grid;
+  align-content: start;
+  gap: 0.9rem;
+  padding: 1.65rem;
+  border: 1px solid rgba(17, 17, 17, 0.11);
+  border-top: 3px solid var(--primary);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.why-card__icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  background: rgba(181, 18, 18, 0.07);
+  border: 1px solid rgba(181, 18, 18, 0.16);
+}
+
+.why-card__icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+.why-card h3 {
+  font-size: 1.08rem;
+  line-height: 1.2;
+}
+
+.why-card p {
+  color: var(--text-soft);
+  font-size: 0.97rem;
+  line-height: 1.62;
+}
+
+@media (max-width: 1140px) {
+  .why-rbb-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .why-rbb-section {
+    padding: 4rem 0;
+  }
+  .why-rbb-grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+  .why-card {
+    padding: 1.35rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .why-rbb-grid {
+    gap: 0.75rem;
+  }
+}
+
+/* ─── Seção de fornecedores ─────────────────────────────── */
+.partners-section {
+  background: #ffffff;
+  padding: 4rem 0 3.5rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.partners-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+  align-items: center;
+}
+
+.partners-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.55rem;
+}
+
+.partners-title h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.partners-title__sub {
+  margin: 0.1rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  text-align: center;
+  max-width: 46ch;
+  line-height: 1.5;
+}
+
+.partners-row {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 2.5rem 3.5rem;
+  width: 100%;
+}
+
+.partners-row li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 64px;
+}
+
+.partner-logo {
+  height: 64px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+  filter: grayscale(1) opacity(0.55);
+  transition: filter 0.28s ease, transform 0.22s ease;
+}
+
+.partner-logo:hover {
+  filter: grayscale(0) opacity(1);
+  transform: translateY(-3px);
+}
+
+/* Escala individual por marca — altere o valor de scale() para ajustar cada logo */
+.partner-logo[alt="Siemens"] { transform: scale(2.40); }
+.partner-logo[alt="Siemens"]:hover { transform: scale(2.40) translateY(-3px); }
+.partner-logo[alt="Allen-Bradley / Rockwell Automation"] { transform: scale(1.00); }
+.partner-logo[alt="Allen-Bradley / Rockwell Automation"]:hover { transform: scale(1.00) translateY(-3px); }
+.partner-logo[alt="Schneider Electric"] { transform: scale(1.00); }
+.partner-logo[alt="Schneider Electric"]:hover { transform: scale(1.00) translateY(-3px); }
+.partner-logo[alt="WEG"] { transform: scale(0.80); }
+.partner-logo[alt="WEG"]:hover { transform: scale(0.80) translateY(-3px); }
+.partner-logo[alt="ABB"] { transform: scale(1.20); }
+.partner-logo[alt="ABB"]:hover { transform: scale(1.20) translateY(-3px); }
+.partner-logo[alt="Delta"] { transform: scale(1.35); }
+.partner-logo[alt="Delta"]:hover { transform: scale(1.35) translateY(-3px); }
+
+@media (max-width: 980px) {
+  .partners-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem 2.5rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .partners-section {
+    padding: 3rem 0 2.5rem;
+  }
+  .partners-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.8rem;
+  }
+  .partners-row li {
+    height: 48px;
+  }
+  .partner-logo {
+    height: 48px;
+  }
 }

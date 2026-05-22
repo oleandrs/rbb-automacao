@@ -40,6 +40,13 @@ if (menuToggle && mainNav) {
 if (siteHeader) {
   let lastScrollY = window.scrollY;
 
+  // Reset on every page show (covers fresh loads and BFCache restores) so that
+  // scroll-restoration triggered by the browser doesn't falsely hide the header.
+  window.addEventListener('pageshow', () => {
+    lastScrollY = window.scrollY;
+    siteHeader.classList.remove('is-hidden');
+  });
+
   window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
     const scrollingDown = currentScrollY > lastScrollY;
@@ -113,6 +120,7 @@ const contactForms = document.querySelectorAll('.contact-form');
 const clearFieldError = (field) => {
   field.classList.remove('is-invalid');
   field.removeAttribute('aria-invalid');
+  field.removeAttribute('aria-describedby');
   const container = field.closest('.field');
   const error = container?.querySelector('.field-error');
   if (error) error.remove();
@@ -123,9 +131,13 @@ const showFieldError = (field) => {
   field.setAttribute('aria-invalid', 'true');
   const container = field.closest('.field');
   if (!container || container.querySelector('.field-error')) return;
-  const error = document.createElement('small');
+  const error = document.createElement('span');
   error.className = 'field-error';
+  error.setAttribute('role', 'alert');
+  const errorId = `error-${field.id || field.name || Math.random().toString(36).slice(2)}`;
+  error.id = errorId;
   error.textContent = 'Preencha este campo corretamente.';
+  field.setAttribute('aria-describedby', errorId);
   container.appendChild(error);
 };
 
