@@ -107,7 +107,7 @@ if (sectionLinks.length && pageSections.length) {
 if (!document.querySelector('.whatsapp-float')) {
   const floatButton = document.createElement('a');
   floatButton.className = 'whatsapp-float';
-  floatButton.href = 'https://wa.me/5521993860628';
+  floatButton.href = 'https://wa.me/5521973383470';
   floatButton.target = '_blank';
   floatButton.rel = 'noopener';
   floatButton.setAttribute('aria-label', 'Abrir conversa no WhatsApp');
