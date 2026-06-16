@@ -112,7 +112,7 @@ function smtp_send_mail(string $toEmail, string $subject, string $bodyText, stri
         }
 
         $socket = smtp_connect($smtp);
-        $clientHost = $_SERVER['SERVER_NAME'] ?? 'localhost';
+        $clientHost = preg_replace('/[^a-zA-Z0-9.\-]/', '', $_SERVER['SERVER_NAME'] ?? '') ?: 'localhost';
 
         smtp_send_command($socket, "EHLO {$clientHost}", [250]);
 

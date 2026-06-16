@@ -107,12 +107,26 @@ if (sectionLinks.length && pageSections.length) {
 if (!document.querySelector('.whatsapp-float')) {
   const floatButton = document.createElement('a');
   floatButton.className = 'whatsapp-float';
-  floatButton.href = 'https://wa.me/5521993860628';
+  floatButton.href = 'https://wa.me/5521973383470';
   floatButton.target = '_blank';
   floatButton.rel = 'noopener';
   floatButton.setAttribute('aria-label', 'Abrir conversa no WhatsApp');
   floatButton.textContent = 'WhatsApp';
   document.body.appendChild(floatButton);
+}
+
+const csrfForms = document.querySelectorAll('.contact-form');
+if (csrfForms.length && window.crypto && window.crypto.getRandomValues) {
+  const csrfToken = Array.from(crypto.getRandomValues(new Uint8Array(24)))
+    .map(b => b.toString(16).padStart(2, '0')).join('');
+  document.cookie = 'csrf_token=' + csrfToken + '; path=/; SameSite=Strict';
+  csrfForms.forEach(function (form) {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'csrf_token';
+    input.value = csrfToken;
+    form.appendChild(input);
+  });
 }
 
 const contactForms = document.querySelectorAll('.contact-form');
