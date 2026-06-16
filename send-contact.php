@@ -4,7 +4,7 @@ require_once __DIR__ . '/smtp-mailer.php';
 $destinationEmail = 'contato@rbbautomacao.com.br';
 
 function clean_input($value) {
-    return trim(strip_tags($value ?? ''));
+    return trim(strip_tags(preg_replace('/[\r\n]+/', ' ', $value ?? '')));
 }
 
 function redirect_with_status($status) {
@@ -26,12 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     redirect_with_status('erro');
 }
 
+$cookieCsrf = $_COOKIE['csrf_token'] ?? '';
+$postCsrf   = $_POST['csrf_token'] ?? '';
+if (!$cookieCsrf || !$postCsrf || !hash_equals($cookieCsrf, $postCsrf)) {
+    redirect_with_status('erro');
+}
+
 $nome = clean_input($_POST['nome'] ?? '');
 $empresa = clean_input($_POST['empresa'] ?? '');
 $telefone = clean_input($_POST['telefone'] ?? '');
 $email = clean_input($_POST['email'] ?? '');
 $servico = clean_input($_POST['servico'] ?? '');
-$mensagem = trim($_POST['mensagem'] ?? '');
+$mensagem = trim(strip_tags($_POST['mensagem'] ?? ''));
 $subject = clean_input($_POST['_subject'] ?? 'Contato pelo site - RBB Automação');
 
 if (!$nome || !$empresa || !$telefone || !$email || !$servico || !$mensagem || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
